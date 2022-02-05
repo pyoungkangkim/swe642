@@ -100,3 +100,10 @@ a.hover {
 a.hover:hover {
     text-decoration: underline;
 }
+
+
+#main-logo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}

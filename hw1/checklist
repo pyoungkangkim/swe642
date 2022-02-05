@@ -32,7 +32,7 @@ The CS Department Information page should include the following.
         dropdown list of options for the user to select the likelihood of him/her recommending
         this school to other prospective students. The three options of the dropdown list are: Very
         Likely, Likely, Unlikely.
--[] Provide a hyperlink to the CS Department Survey Page from the CS Dept Information Page
+-[x] Provide a hyperlink to the CS Department Survey Page from the CS Dept Information Page
 -[] Your pages should include the George Mason University Logo as an image link to the
         GMU Website fixed on the right-bottom portion of your Web page.
 -[] Your web page should make use of the George Mason University color scheme in some way.
