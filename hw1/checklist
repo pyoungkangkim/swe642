@@ -33,9 +33,9 @@ The CS Department Information page should include the following.
         this school to other prospective students. The three options of the dropdown list are: Very
         Likely, Likely, Unlikely.
 -[x] Provide a hyperlink to the CS Department Survey Page from the CS Dept Information Page
--[] Your pages should include the George Mason University Logo as an image link to the
+-[x] Your pages should include the George Mason University Logo as an image link to the
         GMU Website fixed on the right-bottom portion of your Web page.
--[] Your web page should make use of the George Mason University color scheme in some way.
+-[x] Your web page should make use of the George Mason University color scheme in some way.
          Green: #006633 Yellow: #FFCC33
 -[] Use an embedded or external responsive css framework like w3 to format the way your
         form, and the rest of your page, is displayed by making use of the w3-container, w3-row,
@@ -47,4 +47,4 @@ The CS Department Information page should include the following.
 -[] The heading at the top of the page should be inside a rectangular box with a solid border
         in GMU green (#006633) and 5px width. The box should use a box-shadow of your
         styling choice.
--[] The body of the window rendering your page should have a light gray (or a color of your choice) background.
+-[x] The body of the window rendering your page should have a light gray (or a color of your choice) background.
