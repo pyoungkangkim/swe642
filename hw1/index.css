@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+#header-rectangle {
+    color: #006633;
+    border: 10px solid;
+    box-shadow: 5px 5px #006633;
+    margin: auto;
+}
+
 .section-header {
     color: #006633;
 }
@@ -23,9 +30,7 @@ body {
     background-color: floralwhite;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -46,9 +51,7 @@ a:hover {
     background-size: cover;
 }
 
-.footer,
-.welcome-top,
-.welcome-bottom {
+.footer, .welcome-top, .welcome-bottom {
     text-align: center;
 }
 
