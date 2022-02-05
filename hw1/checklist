@@ -4,7 +4,7 @@ The CS Department Information page should include the following.
         come up with your own text or borrow from the department’s web page). Use XHTML
         heading elements to format text on your page according to importance.
 -[x] Provide the list of MS Degrees using the XHTML List elements
--[] Indicate the required courses for each MS degree program using a table with the course
+-[x] Indicate the required courses for each MS degree program using a table with the course
         number and course name as the columns
 -[] Create a CS Department Survey page that allows prospective students to provide
         feedback about their campus visit.
