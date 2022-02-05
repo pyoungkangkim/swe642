@@ -1,0 +1,8 @@
+.idea
+.vscode
+backend.iml
+service*.iml
+src/main/resources/public
+target
+*.env
+!.sample.env
