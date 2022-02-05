@@ -44,7 +44,7 @@ The CS Department Information page should include the following.
         creative as you’d like. At the very least, the style sheet should include a rule that displays
         h1 elements in GMU Green (#006633), as well as create a custom style class that could
         be used for any element on the page.
--[] The heading at the top of the page should be inside a rectangular box with a solid border
+-[x] The heading at the top of the page should be inside a rectangular box with a solid border
         in GMU green (#006633) and 5px width. The box should use a box-shadow of your
         styling choice.
 -[x] The body of the window rendering your page should have a light gray (or a color of your choice) background.
