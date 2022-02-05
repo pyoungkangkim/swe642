@@ -58,15 +58,15 @@ a:hover {
     font-weight: 700;
 }
 
-.about,
-.questions {
+.intro,
+.degrees {
     max-width: 37.5em;
     margin: 0 auto;
     margin-top: 3em;
     line-height: 1.5em;
 }
 
-.questions h3 {
+.degrees h3 {
     color: #9ADEBF;
 }
 
