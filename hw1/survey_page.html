@@ -17,7 +17,7 @@
         <label class="required-field">required fields are marked </label>
         <br><br>
     </div>
-    <form class="w3-container w3-card-8">
+    <form class="w3-container w3-card-8" autocomplete="on">
         <div class="w3-group">
             <input class="w3-input" type="text" style="width:100%" required>
             <label class="w3-label required-field">User Name</label>
@@ -56,46 +56,35 @@
         </div>
         <br>
         <strong>Provide a checklist of what you liked most about the campus</strong>
-        <br><br>
+        <br>
+        <p>(Check all that apply)</p>
         <div class="w3-row">
             <div class="w3-half">
                 <label class="w3-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox"> Students
                     <div class="w3-checkmark"></div>
-                    Students
                 </label>
-                <br>
                 <label class="w3-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox"> Location
                     <div class="w3-checkmark"></div>
-                    Location
                 </label>
-                <br>
                 <label class="w3-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox"> Campus
                     <div class="w3-checkmark"></div>
-                    Campus
                 </label>
-                <br>
-                <br>
             </div>
             <div class="w3-half">
                 <label class="w3-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox"> Atmosphere
                     <div class="w3-checkmark"></div>
-                    Atmosphere
                 </label>
-                <br>
                 <label class="w3-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox"> Dorm Rooms
                     <div class="w3-checkmark"></div>
-                    Dorm Rooms
                 </label>
-                <br>
                 <label class="w3-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox"> Sports
                     <div class="w3-checkmark"></div>
-                    Sports
                 </label>
                 <br>
                 <br>
@@ -106,32 +95,44 @@
         <div class="w3-row">
             <div class="w3-half">
                 <label class="w3-checkbox">
-                    <input type="radio" name="interested-reason" value="no">
+                    <input type="radio" name="interested-reason" value="no"> Friends
                     <div class="w3-checkmark"></div>
-                    Friends
                 </label>
-                <br>
                 <label class="w3-checkbox">
-                    <input type="radio" name="interested-reason" value="no">
+                    <input type="radio" name="interested-reason" value="no"> Television
                     <div class="w3-checkmark"></div>
-                    Television
                 </label>
-                <br>
             </div>
             <div class="w3-half">
                 <label class="w3-checkbox">
-                    <input type="radio" name="interested-reason" value="no">
+                    <input type="radio" name="interested-reason" value="no"> Internet
                     <div class="w3-checkmark"></div>
-                    Internet
                 </label>
-                <br>
                 <label class="w3-checkbox">
-                    <input type="radio" name="interested-reason" value="no">
+                    <input type="radio" name="interested-reason" value="no"> Other
                     <div class="w3-checkmark"></div>
-                    Other
                 </label>
                 <br>
             </div>
+        </div>
+        <br>
+        <div class="w3-group">
+            <label for="browser">Please select your high school graduation month</label>
+            <input list="browsers" name="browser" id="browser">
+            <datalist id="browsers">
+                <option value="January">
+                <option value="February">
+                <option value="March">
+                <option value="April">
+                <option value="May">
+                <option value="June">
+                <option value="July">
+                <option value="August">
+                <option value="September">
+                <option value="October">
+                <option value="November">
+                <option value="December">
+            </datalist>
         </div>
         <br>
         <div class="w3-group">
