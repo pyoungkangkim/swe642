@@ -22,7 +22,7 @@ The CS Department Information page should include the following.
 -[x] Provide a text area for additional comments, and a submit button.
 -[x] Using the datalist feature, enable the user to select high-school graduation month
         (January through December), followed by a text field for year.
--[] Enable the autocomplete attribute for the entire survey form that will allow the user to
+-[x] Enable the autocomplete attribute for the entire survey form that will allow the user to
         automatically fill in his/her information (e.g., name, address, email, telephone, etc.) based
         on previous input.
 -[x] Use placeholders where you deem appropriate (e.g., for the date format, email, URL, etc.)

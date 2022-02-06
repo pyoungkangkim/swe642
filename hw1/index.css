@@ -75,7 +75,7 @@ a:hover {
     font-weight: 700;
 }
 
-.intro, .degrees {
+.intro, .degrees, .survey {
     max-width: 37.5em;
     margin: 0 auto;
     margin-top: 3em;
