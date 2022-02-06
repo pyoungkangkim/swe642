@@ -20,19 +20,19 @@ The CS Department Information page should include the following.
         university. Options should include: friends, television, Internet, and other.
 -[x] Ensure your check boxes and radio buttons can be activated by clicking on the respective labels
 -[x] Provide a text area for additional comments, and a submit button.
--[] Using the datalist feature, enable the user to select high-school graduation month
+-[x] Using the datalist feature, enable the user to select high-school graduation month
         (January through December), followed by a text field for year.
 -[] Enable the autocomplete attribute for the entire survey form that will allow the user to
         automatically fill in his/her information (e.g., name, address, email, telephone, etc.) based
         on previous input.
--[] Use placeholders where you deem appropriate (e.g., for the date format, email, URL, etc.)
+-[x] Use placeholders where you deem appropriate (e.g., for the date format, email, URL, etc.)
         that provides an example of the text and/or format/pattern the user should enter.
 -[x] Use the required attribute for fields as appropriate that forces the user to enter or select a
         value before submitting the form.
 -[x] Visually indicate to the user which fields are required
--[] When the survey form is opened, you should automatically provide the focus in the first
-        text field on the form to allow the user to begin typing in that field immediately. Provide
-        dropdown list of options for the user to select the likelihood of him/her recommending
+-[x] When the survey form is opened, you should automatically provide the focus in the first
+        text field on the form to allow the user to begin typing in that field immediately.
+-[x] Provide dropdown list of options for the user to select the likelihood of him/her recommending
         this school to other prospective students. The three options of the dropdown list are: Very
         Likely, Likely, Unlikely.
 -[x] Provide a hyperlink to the CS Department Survey Page from the CS Dept Information Page
