@@ -8,7 +8,7 @@ The CS Department Information page should include the following.
         number and course name as the columns
 -[x] Create a CS Department Survey page that allows prospective students to provide
         feedback about their campus visit.
--[] Use an embedded or external responsive css framework like w3 to format the way your
+-[x] Use an embedded or external responsive css framework like w3 to format the way your
         form, and the rest of your page, is displayed by making use of the w3-container, w3-row,
         and w3-col classes in that library.
 -[x] This web page should contain a form with text boxes using appropriate input types for the
@@ -16,10 +16,10 @@ The CS Department Information page should include the following.
 -[x] Provide checkboxes that allow prospective students to indicate what they liked most
         about the campus. The checkboxes should include: students, location, campus,
         atmosphere, dorm rooms, and sports.
--[] Provide radio buttons that ask the prospective students how they became interested in the
+-[x] Provide radio buttons that ask the prospective students how they became interested in the
         university. Options should include: friends, television, Internet, and other.
--[] Ensure your check boxes and radio buttons can be activated by clicking on the respective labels
--[] Provide a text area for additional comments, and a submit button.
+-[x] Ensure your check boxes and radio buttons can be activated by clicking on the respective labels
+-[x] Provide a text area for additional comments, and a submit button.
 -[] Using the datalist feature, enable the user to select high-school graduation month
         (January through December), followed by a text field for year.
 -[] Enable the autocomplete attribute for the entire survey form that will allow the user to
