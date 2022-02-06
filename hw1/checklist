@@ -27,9 +27,9 @@ The CS Department Information page should include the following.
         on previous input.
 -[] Use placeholders where you deem appropriate (e.g., for the date format, email, URL, etc.)
         that provides an example of the text and/or format/pattern the user should enter.
--[] Use the required attribute for fields as appropriate that forces the user to enter or select a
+-[x] Use the required attribute for fields as appropriate that forces the user to enter or select a
         value before submitting the form.
--[] Visually indicate to the user which fields are required
+-[x] Visually indicate to the user which fields are required
 -[] When the survey form is opened, you should automatically provide the focus in the first
         text field on the form to allow the user to begin typing in that field immediately. Provide
         dropdown list of options for the user to select the likelihood of him/her recommending

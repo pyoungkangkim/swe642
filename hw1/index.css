@@ -93,6 +93,11 @@ a:hover {
     padding: 3.8em 0;
 }
 
+.required-field::after {
+    content: "*";
+    color: red;
+}
+
 .footer p {
     text-align: center;
 }
