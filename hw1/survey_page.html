@@ -19,40 +19,40 @@
     </div>
     <form class="w3-container w3-card-8" autocomplete="on">
         <div class="w3-group">
-            <input class="w3-input" type="text" style="width:100%" required placeholder="jdoe24" autofocus>
-            <label class="w3-label required-field">User Name</label>
+            <input id="form-username" class="w3-input" type="text" style="width:100%" required placeholder="jdoe24" autofocus>
+            <label for="form-username" class="w3-label required-field">User Name</label>
         </div>
         <div class="w3-group">
-            <input class="w3-input" type="text" style="width:100%" required placeholder="12345 John Doe Street">
-            <label class="w3-label required-field">Street Address</label>
+            <input id="form-street" class="w3-input" type="text" style="width:100%" required placeholder="12345 John Doe Street">
+            <label for="form-street" class="w3-label required-field">Street Address</label>
         </div>
         <div class="w3-third">
-            <input class="w3-input" type="text" style="width:87%" required placeholder="John Doe City">
-            <label class="w3-label required-field">City</label>
+            <input id="form-city" class="w3-input" type="text" style="width:87%" required placeholder="John Doe City">
+            <label for="form-city" class="w3-label required-field">City</label>
         </div>
         <div class="w3-third">
-            <input class="w3-input" type="text" style="width:87%" required placeholder="VA">
-            <label class="w3-label required-field">State</label>
+            <input id="form-state" class="w3-input" type="text" style="width:87%" required placeholder="VA">
+            <label for="form-state" class="w3-label required-field">State</label>
         </div>
         <div class="w3-third">
-            <input class="w3-input" type="text" style="width:100%" required placeholder="12345">
-            <label class="w3-label required-field">Zip</label>
+            <input id="form-zip" class="w3-input" type="text" style="width:100%" required placeholder="12345">
+            <label for="form-zip" class="w3-label required-field">Zip</label>
         </div>
         <div class="w3-half">
-            <input class="w3-input" type="text" style="width:90%" required placeholder="1-(123)-123-1234">
-            <label class="w3-label required-field">Telephone Number</label>
+            <input id="form-telephone" class="w3-input" type="text" style="width:90%" required placeholder="1-(123)-123-1234">
+            <label for="form-telephone" class="w3-label required-field">Telephone Number</label>
         </div>
         <div class="w3-half">
-            <input class="w3-input" type="text" style="width:100%" required placeholder="myemail@email.com">
-            <label class="w3-label required-field">E-mail</label>
+            <input id="form-email" class="w3-input" type="text" style="width:100%" required placeholder="myemail@email.com">
+            <label for="form-email" class="w3-label required-field">E-mail</label>
         </div>
         <div class="w3-half">
-            <input class="w3-input" type="text" style="width:90%" placeholder="mypersonalurl.com">
-            <label class="w3-label required-field">URL</label>
+            <input id="form-url" class="w3-input" type="text" style="width:90%" placeholder="mypersonalurl.com">
+            <label for="form-url" class="w3-label required-field">URL</label>
         </div>
         <div class="w3-half">
-            <input class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000">
-            <label class="w3-label required-field">Date of Survey</label>
+            <input id="form-date" class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000">
+            <label for="form-date" class="w3-label required-field">Date of Survey</label>
         </div>
         <br>
         <strong>Provide a checklist of what you liked most about the campus</strong>
@@ -147,10 +147,30 @@
             <label class="w3-label">Additional comments</label>
         </div>
         <br>
-        <div class="w3-container">
-        <p><button class="w3-button w3-block w3-green w3-col" style="color: #006633;">Submit</button></p>
-        </div>
+
+        <input type="submit" value="Submit">
+<!--        <div class="w3-container">-->
+<!--        <p><button class="w3-button w3-block w3-green w3-col" style="color: #006633;">Submit</button></p>-->
+<!--        </div>-->
     </form>
+
+    <form autocomplete="on">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <input type="submit">
+    </form>
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+    <form class="w3-container w3-card-8" autocomplete="on">
+        <div class="w3-group">
+            <input id="hi" class="w3-input" type="text" style="width:100%" required placeholder="jdoe24" autofocus>
+            <label  for="hi" class="w3-label required-field">User Name</label>
+        </div>
+        <input type="submit">
+    </form>
+
 </section>
 
 <footer class="footer">
