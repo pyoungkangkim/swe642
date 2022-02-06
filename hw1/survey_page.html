@@ -2,40 +2,153 @@
 <head>
     <title>pkim23 swe642 HW1</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 <header class="header">
-    <div>
-        <p class="welcome-top">Survey Page</p>
-        <h1 class="welcome-bottom">Computer Science Department</h1>
+    <div id="header-rectangle" style="width: 800px; padding: 20px 12px 12px 12px;" class="w3-container">
+        <h1 class="welcome-bottom">CS Department Survey</h1>
     </div>
 </header>
 
+<body>
 <section class="intro">
-
-    <h2>Introduction</h2>
-    <p>With nearly 70 full-time faculty members, the CS Department at Mason is the largest
-        department in the College of Engineering and Computing, one of the largest departments
-        on campus, and the largest and fastest growing CS department in the Commonwealth of Virginia. </p>
-
-    <p>Today, not only is computing pervasive in society, but computational methods are used in almost
-        every field of scholarly endeavor ranging from the arts and humanities to the hard sciences and
-        engineering, as well as every sector of industry. Given the importance of computing in today's world,
-        we strongly support the goal of "Computing for All", providing a diverse array of programs and courses
-        in computing to students from all backgrounds and at all levels.</p>
-
-    <h2>Program Survey</h2>
-    <p>As a part of improving the Computer Science Department, we collect surveys from students and faculty.</p>
-    <p>Take a CS Department Survey Page
-    <a href="" style="text-decoration: underline;">here.</a></li>
-    </p>
+    <form class="w3-container w3-card-8">
+        <div class="w3-group">
+            <input class="w3-input" type="text" style="width:100%" required>
+            <label class="w3-label">User Name</label>
+        </div>
+        <div class="w3-group">
+            <input class="w3-input" type="text" style="width:100%" required>
+            <label class="w3-label">Street Address</label>
+        </div>
+        <div class="w3-third">
+            <input class="w3-input" type="text" style="width:87%" required>
+            <label class="w3-label">City</label>
+        </div>
+        <div class="w3-third">
+            <input class="w3-input" type="text" style="width:87%" required>
+            <label class="w3-label">State</label>
+        </div>
+        <div class="w3-third">
+            <input class="w3-input" type="text" style="width:100%" required>
+            <label class="w3-label">Zip</label>
+        </div>
+        <div class="w3-half">
+            <input class="w3-input" type="text" style="width:90%" required>
+            <label class="w3-label">Telephone Number</label>
+        </div>
+        <div class="w3-half">
+            <input class="w3-input" type="text" style="width:100%" required>
+            <label class="w3-label">E-mail</label>
+        </div>
+        <div class="w3-half">
+            <input class="w3-input" type="text" style="width:90%" required>
+            <label class="w3-label">URL</label>
+        </div>
+        <div class="w3-half">
+            <input class="w3-input" type="text" style="width:100%" required>
+            <label class="w3-label">Date of Survey</label>
+        </div>
+        <div class="w3-group">
+            <textarea class="w3-input" style="width:100%" required></textarea>
+            <label class="w3-label">Comments</label>
+        </div>
+        <br>
+        <strong>Provide a checklist of what you liked most about the campus</strong>
+        <br><br>
+        <div class="w3-row">
+            <div class="w3-half">
+                <label class="w3-checkbox">
+                    <input type="checkbox" checked="checked">
+                    <div class="w3-checkmark"></div>
+                    Students
+                </label>
+                <br>
+                <label class="w3-checkbox">
+                    <input type="checkbox">
+                    <div class="w3-checkmark"></div>
+                    Location
+                </label>
+                <br>
+                <label class="w3-checkbox">
+                    <input type="checkbox">
+                    <div class="w3-checkmark"></div>
+                    Campus
+                </label>
+                <br>
+                <br>
+            </div>
+            <div class="w3-half">
+                <label class="w3-checkbox">
+                    <input type="checkbox" checked="checked">
+                    <div class="w3-checkmark"></div>
+                    Atmosphere
+                </label>
+                <br>
+                <label class="w3-checkbox">
+                    <input type="checkbox">
+                    <div class="w3-checkmark"></div>
+                    Dorm Rooms
+                </label>
+                <br>
+                <label class="w3-checkbox">
+                    <input type="checkbox">
+                    <div class="w3-checkmark"></div>
+                    Sports
+                </label>
+                <br>
+                <br>
+            </div>
+        </div>
+        <br>
+        <strong>Please include the biggest reason you became interested in this school</strong>
+        <br><br>
+        <div class="w3-row">
+            <div class="w3-half">
+                <label class="w3-checkbox">
+                    <input type="radio" name="interested-reason" value="no" checked>
+                    <div class="w3-checkmark"></div>
+                    Friends
+                </label>
+                <br>
+                <label class="w3-checkbox">
+                    <input type="radio" name="interested-reason" value="no">
+                    <div class="w3-checkmark"></div>
+                    Television
+                </label>
+                <br>
+            </div>
+            <div class="w3-half">
+                <label class="w3-checkbox">
+                    <input type="radio" name="interested-reason" value="no">
+                    <div class="w3-checkmark"></div>
+                    Internet
+                </label>
+                <br>
+                <label class="w3-checkbox">
+                    <input type="radio" name="interested-reason" value="no">
+                    <div class="w3-checkmark"></div>
+                    Other
+                </label>
+                <br>
+            </div>
+        </div>
+    </form>
 </section>
 
 <footer class="footer">
-    <p style="font-size: 50%">Other links</p>
-    <ul class="footer-links">
-        <li><a href="https://twitter.com/HamishAIrving">CS GMU</a></li>
-        <li><a href="https://github.com/hamishirving">CS SURVEY</a></li>
-        <li><a href="#">GMU MS</a></li>
+    <p style="font-size: 25px; color: #006633;">Additional Links</p>
+    <ul class="footer-links w3-container">
+        <li class="w3-ul"><a href="https://cs.gmu.edu">CS GMU</a></li>
+        <li class="w3-ul"><a href="survey_page.html">CS SURVEY</a></li>
+        <li class="w3-ul"><a href="https://catalog.gmu.edu/colleges-schools/engineering/computer-science/">MS CS</a>
+        </li>
     </ul>
 </footer>
+
+<a href="https://gmu.edu/">
+    <img id="main-logo" src="mason_logo.png" alt="GMU website" style="width: 280px; height: 160px;">
+</a>
+</body>
 </html>

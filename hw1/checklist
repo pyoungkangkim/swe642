@@ -6,11 +6,14 @@ The CS Department Information page should include the following.
 -[x] Provide the list of MS Degrees using the XHTML List elements
 -[x] Indicate the required courses for each MS degree program using a table with the course
         number and course name as the columns
--[] Create a CS Department Survey page that allows prospective students to provide
+-[x] Create a CS Department Survey page that allows prospective students to provide
         feedback about their campus visit.
--[] This web page should contain a form with text boxes using appropriate input types for the
+-[] Use an embedded or external responsive css framework like w3 to format the way your
+        form, and the rest of your page, is displayed by making use of the w3-container, w3-row,
+        and w3-col classes in that library.
+-[x] This web page should contain a form with text boxes using appropriate input types for the
         user name, street address, city, state, zip, telephone number, e-mail, URL, and date of survey.
--[] Provide checkboxes that allow prospective students to indicate what they liked most
+-[x] Provide checkboxes that allow prospective students to indicate what they liked most
         about the campus. The checkboxes should include: students, location, campus,
         atmosphere, dorm rooms, and sports.
 -[] Provide radio buttons that ask the prospective students how they became interested in the
@@ -37,10 +40,7 @@ The CS Department Information page should include the following.
         GMU Website fixed on the right-bottom portion of your Web page.
 -[x] Your web page should make use of the George Mason University color scheme in some way.
          Green: #006633 Yellow: #FFCC33
--[] Use an embedded or external responsive css framework like w3 to format the way your
-        form, and the rest of your page, is displayed by making use of the w3-container, w3-row,
-        and w3-col classes in that library.
--[] The CSS should also be used for fonts, colors, background etc. You are free to be as
+-[x] The CSS should also be used for fonts, colors, background etc. You are free to be as
         creative as you’d like. At the very least, the style sheet should include a rule that displays
         h1 elements in GMU Green (#006633), as well as create a custom style class that could
         be used for any element on the page.
