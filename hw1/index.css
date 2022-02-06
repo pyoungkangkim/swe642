@@ -50,6 +50,7 @@ a:hover {
 
 .header {
     padding: 2.0em 0;
+    /*mason image from https://www.facebook.com/gmuece/*/
     background-image: url('mason.jpg');
     background-repeat: no-repeat;
     background-size: cover;
