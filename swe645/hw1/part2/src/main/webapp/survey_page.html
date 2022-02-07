@@ -9,7 +9,7 @@
 <!--Header Section-->
 <header class="header">
     <div id="header-rectangle" style="width: 800px; padding: 20px 12px 12px 12px;" class="w3-container">
-        <h1 class="welcome-bottom">CS Department Survey</h1>
+        <h1 class="welcome-bottom">GMU Student Survey</h1>
     </div>
 </header>
 
@@ -21,16 +21,20 @@
         <br><br>
     </div>
     <form class="w3-container w3-card-8" autocomplete="on">
-        <div class="w3-group">
-            <input id="form-username" class="w3-input" type="text" style="width:100%" required placeholder="jdoe24" autofocus>
-            <label for="form-username" class="w3-label required-field">User Name</label>
+        <div class="w3-half">
+            <input id="form-firstname" class="w3-input" type="text" style="width:90%" required placeholder="John">
+            <label for="form-firstname" class="w3-label required-field">First Name</label>
         </div>
-        <div class="w3-group">
-            <input id="form-street" class="w3-input" type="text" style="width:100%" required placeholder="12345 John Doe Street">
+        <div class="w3-half">
+            <input id="form-lastname" class="w3-input" type="text" style="width:100%" required placeholder="Doe">
+            <label for="form-lastname" class="w3-label required-field">Last Name</label>
+        </div>
+        <div class="w3-half">
+            <input id="form-street" class="w3-input" type="text" style="width:90%" required placeholder="12345 John Doe Street">
             <label for="form-street" class="w3-label required-field">Street Address</label>
         </div>
-        <div class="w3-third">
-            <input id="form-city" class="w3-input" type="text" style="width:87%" required placeholder="John Doe City">
+        <div class="w3-half">
+            <input id="form-city" class="w3-input" type="text" style="width:100%" required placeholder="John Doe City">
             <label for="form-city" class="w3-label required-field">City</label>
         </div>
         <div class="w3-third">
@@ -38,20 +42,16 @@
             <label for="form-state" class="w3-label required-field">State</label>
         </div>
         <div class="w3-third">
-            <input id="form-zip" class="w3-input" type="text" style="width:100%" required placeholder="12345">
+            <input id="form-zip" class="w3-input" type="text" style="width:90%" required placeholder="12345">
             <label for="form-zip" class="w3-label required-field">Zip</label>
         </div>
-        <div class="w3-half">
-            <input id="form-telephone" class="w3-input" type="text" style="width:90%" required placeholder="1-(123)-123-1234">
+        <div class="w3-third">
+            <input id="form-telephone" class="w3-input" type="text" style="width:100%" required placeholder="1-(123)-123-1234">
             <label for="form-telephone" class="w3-label required-field">Telephone Number</label>
         </div>
         <div class="w3-half">
-            <input id="form-email" class="w3-input" type="text" style="width:100%" required placeholder="myemail@email.com">
+            <input id="form-email" class="w3-input" type="text" style="width:90%" required placeholder="myemail@email.com">
             <label for="form-email" class="w3-label required-field">E-mail</label>
-        </div>
-        <div class="w3-half">
-            <input id="form-url" class="w3-input" type="text" style="width:90%" placeholder="mypersonalurl.com">
-            <label for="form-url" class="w3-label required-field">URL</label>
         </div>
         <div class="w3-half">
             <input id="form-date" class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000">
@@ -119,25 +119,6 @@
             </div>
         </div>
         <br>
-        <div class="w3-group">
-            <label for="browser">Please select your high school graduation month</label>
-            <input list="browsers" name="browser" id="browser">
-            <datalist id="browsers">
-                <option value="January">
-                <option value="February">
-                <option value="March">
-                <option value="April">
-                <option value="May">
-                <option value="June">
-                <option value="July">
-                <option value="August">
-                <option value="September">
-                <option value="October">
-                <option value="November">
-                <option value="December">
-            </datalist>
-        </div>
-        <br>
         <label >Please select how likely you will recommend this school to prospective students</label>
         <select name="recommend-school">
             <option value="Very Unlikely">Very Likely</option>
@@ -146,12 +127,25 @@
         </select>
         <br><br>
         <div class="w3-group">
+            <textarea class="w3-input" style="width:100%"
+                      placeholder="Please enter below, at least ten comma separated numbers ranging from 1 through 100 in the Raffle field"></textarea>
+            <label class="w3-label">Raffle
+                (this information will be used to announce whether the student wins a free movie ticket)
+            </label>
+        </div>
+        <br>
+        <div class="w3-group">
             <textarea class="w3-input" style="width:100%"></textarea>
             <label class="w3-label">Additional comments</label>
         </div>
         <br>
         <div class="w3-container">
-        <p><button class="w3-button w3-block w3-green w3-col" style="color: #006633;">Submit</button></p>
+            <div class="w3-half">
+                <button class="w3-button w3-block w3-blue w3-col" style="color: #006633; width: 90%;">Submit</button>
+            </div>
+            <div class="w3-half">
+                <button class="w3-button w3-block w3-blue w3-col" style="color: #006633; width: 90%;">Cancel</button>
+            </div>
         </div>
     </form>
 </section>
