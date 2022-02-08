@@ -1,0 +1,233 @@
+<!--w3 template from-->
+<!--https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_analytics&stacked=h-->
+<!DOCTYPE html>
+<html>
+<title>SWE 642 pkim23</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html, body, h1, h2, h3, h4, h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
+        <i>class="fa fa-bars"></i>  Menu
+    </button>
+    <span class="w3-bar-item w3-right">SWE 645</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px; border: solid 1px grey;" id="mySidebar"><br>
+    <div class="w3-container w3-row">
+        <div class="w3-col s4">
+            <img src="paul.jpeg" class="w3-circle w3-margin-right" style="width:86px">
+        </div>
+        <div class="w3-col s8 w3-bar">
+            <span><strong>Pyoung Kang Kim</strong></span><br>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+        </div>
+    </div>
+    <hr>
+    <div class="w3-container">
+        <h5>Dashboard</h5>
+    </div>
+
+    <div class="w3-bar-block">
+        <a href="#overview" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-light-grey">
+            <i class="fa fa-user fa-fw"></i>  Overview
+        </a>
+        <a href="#homework1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
+            <i class="fa fa-book fa-fw"></i>  Homework 1
+        </a>
+        <a href="#homework2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-light-grey">
+            <i class="fa fa-book fa-fw"></i>  Homework 2
+        </a>
+        <a href="#homework3" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
+            <i class="fa fa-book fa-fw"></i>  Homework 3
+        </a>
+        <a href="#homework4" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-light-grey">
+            <i class="fa fa-book fa-fw"></i>  Homework 4
+        </a>
+    </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+     title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+    <br>
+    <h2>&nbsp;&nbsp;&nbsp;<u>Overview</u></h2>
+    <div>
+        <div class="w3-half">
+<!--picture from https://www.susla.edu/assets/susla/images/WebDevelopmentImage.jpeg-->
+            <div class="w3-col m2 text-center">
+                <img src="swe642.jpeg" style="width:700px;height:340px">
+            </div>
+        </div>
+
+        <div class="w3-half" style="width:40%">
+            This site is for SWE-642 where I will be posting my homework links in sections as shown in the left hand
+            Dashboard. The homework sections are clickable and will bring you to the sections and with the link of the
+            homework, as well as other details about the assignment.
+            <br><br>
+            <strong>Self Description</strong><br>
+            I have been leading machine learning projects for over 3 years in the government contracting space. My passion
+            is in building models that critical to the business goals and interface well with the application. In order to
+            achieve the latter, I work closely with full stack developers and often find myself contributing to the backend
+            codebase myself. I teach high schoolers and professionals in the field pursuing Machine Learning and also
+            participate in kaggle competitions for fun <a href="https://www.kaggle.com/pyoungkangkim">
+            https://www.kaggle.com/pyoungkangkim</a>. I look forward to learning more about web development from this course.
+        </div>
+    </div>
+    <br>
+    <!-- Header -->
+    <div class="w3-panel" id="homework1">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-group">
+                <br>
+                <h2>&nbsp;&nbsp;&nbsp;<u>Homework 1</u></h2>
+                <div class="w3-container w3-floralwhite w3-padding-32">
+                    <div class="w3-row">
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Link</h5>
+                            <p><a href="https://mason.gmu.edu/~pkim23/hw1/part1/index.html" style="color: cornflowerblue;">
+                                https://mason.gmu.edu/~pkim23/hw1/part1/index.html
+                            </a></p>
+                            <p><a href="https://mason.gmu.edu/~pkim23/hw1/part2/intro_landing_page.html" style="color: cornflowerblue;">
+                                https://mason.gmu.edu/~pkim23/hw1/part2/intro_landing_page.html
+                            </a></p>
+                            <p><a href="https://mason.gmu.edu/~pkim23/hw1/part2/survey_page.html" style="color: cornflowerblue;">
+                                https://mason.gmu.edu/~pkim23/hw1/part2/survey_page.html
+                            </a></p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-cornflowerblue">Description</h5>
+                            <p>Homepage to provide links to homework submissions</p>
+                            <p>The CS Department Information page(has link to Survey)</p>
+                            <p>The CS Department Survey page</p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Part</h5>
+                            <p>part 1</p>
+                            <p>part 2</p>
+                            <p>part 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-panel" id="homework2">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-group">
+                <br>
+                <h2>&nbsp;&nbsp;&nbsp;<u>Homework 2</u></h2>
+                <div class="w3-container w3-floralwhite w3-padding-32">
+                    <div class="w3-row">
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Link</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-cornflowerblue">Description</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Part</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-panel" id="homework3">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-group">
+                <br>
+                <h2>&nbsp;&nbsp;&nbsp;<u>Homework 3</u></h2>
+                <div class="w3-container w3-floralwhite w3-padding-32">
+                    <div class="w3-row">
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Link</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-cornflowerblue">Description</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Part</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-panel" id="homework4">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-group">
+                <br>
+                <h2>&nbsp;&nbsp;&nbsp;<u>Homework 4</u></h2>
+                <div class="w3-container w3-floralwhite w3-padding-32">
+                    <div class="w3-row">
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Link</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-cornflowerblue">Description</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                        <div class="w3-container w3-third">
+                            <h5 class="w3-bottombar w3-border-grey">Part</h5>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                            <p>Placeholder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+        <div class="w3-center" style="color: gray"><strong>-Pyoung Kang Kim, pkim23 </strong></div>
+    </footer>
+    <!-- End page content -->
+</div>
+</body>
+</html>

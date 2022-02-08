@@ -1,0 +1,12 @@
+
+inside of part2 directory
+
+scp -i swe645-hw1.pem -rp part2 bitnami@54.90.72.214:/home/bitnami
+ssh -i 'swe645-hw1.pem' bitnami@54.90.72.214
+sudo apt install maven -y
+cd part2
+mvn clean install
+cp target/part2-1.0-SNAPSHOT.war /opt/bitnami/tomcat/webapps
+cd /opt/bitnami/tomcat/bin
+./startup.sh
+curl http://localhost:8080/part2-1.0-SNAPSHOT/survey_page.html
