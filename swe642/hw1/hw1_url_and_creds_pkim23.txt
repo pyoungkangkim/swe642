@@ -1,0 +1,8 @@
+Part 1 URL(homepage that has all the homework links)
+
+https://mason.gmu.edu/~pkim23/hw1/part1/index.html
+
+Credentials
+
+username: swe642
+password: 1030
