@@ -9,7 +9,7 @@
 
 ## Part 2
 
-### EC2's tomcat's Student Suvey URL
+### EC2's tomcat's Student Survey URL
 
 * http://ec2-54-157-41-151.compute-1.amazonaws.com/part2-1.0-SNAPSHOT/survey_page.html
 
