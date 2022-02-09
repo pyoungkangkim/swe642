@@ -1,3 +1,5 @@
+// name: Pyoung Kang Kim
+// description: a servlet that will return a simple hello html tags, if endpoint configured to in web.xml
 package com.swe645.pkim23.part2;
 
 import java.io.*;
