@@ -33,12 +33,10 @@
 
 • Form Validation Event Handling – Develop an event handler to handle onclick event when
     a user clicks the submit button on the Survey Form. The event handler should validate the
-    following:
+    following: Validate alert the user with a consolidated error message if the user missed filling
+    out anything on the form that did not meet above criteria.
 
-    Validate alert the user with a consolidated error message if the user missed filling out anything
-    on the form that did not meet above criteria. Your validation warning errors should be implemented
-    using jQuery UI modal window (as opposed to window’s dialog box).
-
+    [ ] - Your validation warning errors should be implemented using jQuery UI modal window
     [ ] - Only the fields with errors should be cleared on alert and not all fields.
     [ ] - In addition, ensure that there is a Reset button on the form and when clicked, the Reset button clears the form contents.
     [ ] - The Name text box should contain only Alphabets.

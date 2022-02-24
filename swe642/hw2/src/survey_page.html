@@ -1,6 +1,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>pkim23 swe642 HW1</title>
+    <link href = "jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
@@ -9,7 +10,7 @@
         if (document.cookie) {
             // use a cookie to hold a user's information and display
             // a greeting with the user’s name from the cookie.
-            const hour = new Date().getHours()
+            const hour = new Date().getHours();
             const partOfDay = hour <= 12 ? 'Morning' : (hour < 18 ? 'Afternoon' : 'Evening');
             const username = document.cookie.split('=')[1];
             alert("Good " + partOfDay + " " + username + ", welcome to SWE642 Survey");
@@ -30,8 +31,7 @@
             // Set the cookie with the user entered name and an expiration time
             document.cookie = 'username=' + username + ';expires=' + oneDayFromNow.toUTCString();
         }
-        function avgmax()
-        {
+        function avgmax() {
             if(!document.getElementById('dataField')) {
                 return;
             }
@@ -40,20 +40,60 @@
             // the Data field.
             let data = document.getElementById('dataField').value.split(',');
             let isValid = data.length === 10 && data.every(e => isNumeric(e) && e >= 1 && e <= 100);
-            console.log(data.length)
             if (!isValid) {
                 // Make sure the Data field contains at least ten comma separated values between 1 and 100
                 // (inclusive), else print an error message.
-                alert('Please enter ten comma separated values between 1 and 100 in Data Field.')
+                alert('Please enter ten comma separated values between 1 and 100 in Data Field.');
                 return
             }
-            data = data.map(e => Number(e))
+            data = data.map(e => Number(e));
             const avg = data.reduce((a, b) => a + b, 0) / data.length;
-            const max = data.reduce((a, b) => Math.max(a, b), 0)
+            const max = data.reduce((a, b) => Math.max(a, b), 0);
             document.getElementById('avg').innerHTML = avg;
             document.getElementById('max').innerHTML = max;
         }
+        // jquery selector and opener
+        $(function () {
+            $("#dialog-1").dialog({
+                autoOpen: false,
+            });
+            $("#opener").click(function () {
+                $("#dialog-1").dialog("open");
+            });
+        });
+        function validateForm() {
+            const alphaNumericPattern = "^[a-zA-Z0-9]+$";
+            const alphaPattern = "^[a-zA-Z]+$";
+            const numericPattern = "^[0-9]+$";
+            // The Name text box should contain only Alphabets.
+            const name = document.getElementById('form-username').value;
+            const nameIsValid = name.match(alphaNumericPattern)
+
+            // The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
+            const street = document.getElementById('form-street').value.replace(/\s\s+/g, ' ').split(' ');
+            const isNumeric = str => !isNaN(str) && !isNaN(parseFloat(str));
+            const streetIsValid = street.length > 1 && isNumeric(street[0]) &&
+                                    street.every(e => e.match(alphaNumericPattern));
+            const city = document.getElementById('form-city').value;
+            const cityIsValid = street.match(alphaPattern);
+            const state = document.getElementById('state').value;
+            const stateIsValid = street.match(alphaPattern);
+            const zip = document.getElementById('zip').value;
+            const zipIsValid = zip.match(numericPattern);
+
+            // Make sure at least two checkboxes are checked.
+            // Make sure a radio button option is selected.
+            // The Email address format should be valid.
+        }
     </script>
+    <style>
+        .ui-widget-header,.ui-state-default, ui-button {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+    </style>
 
 </head>
 
@@ -65,13 +105,16 @@
 </header>
 
 <body>
+<!--Your validation warning errors should be implemented using jQuery UI modal window-->
+<div id = "dialog-1" title = "Dialog Title goes here...">This my first jQuery UI Dialog!</div>
+<button id = "opener">Open Dialog</button>
 <!--Survey Section-->
 <section class="survey">
     <div class="w3-group">
         <label class="required-field">required fields are marked </label>
         <br><br>
     </div>
-    <form class="w3-container w3-card-8" autocomplete="on">
+    <form class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm()">
         <div class="w3-group">
             <input id="form-username" class="w3-input" type="text" style="width:100%" required placeholder="jdoe24" autofocus>
             <label for="form-username" class="w3-label required-field">User Name</label>
