@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> CS Department </title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script src="script/jquery-2.1.4.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style/jquery-ui-1.11.4.custom/jquery-ui.css"/>
+<script src="style/jquery-ui-1.11.4.custom/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+function dataCalc()
+{
+  
+  if(!document.getElementById("data").value=="")
+  {
+  var dataSet=document.getElementById("data").value.split(",");
+  if(dataSet.length<10)
+    document.getElementById("datalert").innerHTML="Please enter at least ten positive numbers between 1 and 100 sepatated by single commas only.";
+  else
+  {
+    for(var i=0;i<dataSet.length;i++)
+    {
+      if (dataSet[i]<1 || dataSet[i]>100 || isNaN(dataSet[i])|| dataSet[i]=="") 
+      {
+        document.getElementById("datalert").innerHTML="Please enter at least ten positive numbers between 1 and 100 sepatated by single commas only.";
+        
+        return;
+      }
+      else
+        document.getElementById("datalert").innerHTML="";
+    }
+  
+  }
+  }
+  else
+  {
+    document.getElementById("datalert").innerHTML="";
+  }
+    
+}
+function submitForm()
+  {
+  //  var namepatt=/^[A-Z \s]+$/i;
+    if(!document.getElementById("FName").value.match(/^[A-Z]+$/i))
+    {
+      //alert("Please enter a valid first name.");
+      $("#nameDialog").dialog({ modal: true });
+
+      document.getElementById("FName").value="";
+    }
+    if(!document.getElementById("LName").value.match(/^[A-Z]+$/i))
+    {
+      //alert("Please enter a valid last name.");
+      $("#nameDialog").dialog({ modal: true });
+
+      document.getElementById("LName").value="";
+    }
+    if(!document.getElementById("street").value.match(/^[a-z0-9]+$/i))
+    {
+      //alert("Please enter a valid Street Adress.");
+      $("#streetDialog").dialog({ modal: true });
+      document.getElementById("street").value="";
+    }
+    var checks=document.getElementsByName("thingsliked")
+    var okie=false;
+    for(var i=0;i<checks.length;i++)
+    {
+      if(checks[i].checked==true)
+      {
+        for(var j=i+1;j<checks.length;j++)
+        {
+          if(checks[j].checked==true)
+          {
+            okie=true;
+            break;
+          }
+        }
+        break;
+      }
+    }
+    if(okie==false)
+    { 
+      //alert("Please check at least two ckeckboxes.");
+      $("#checkDialog").dialog({ modal: true });
+      for(var i=0;i<checks.length;i++)
+        document.getElementsByName("thingsliked")[i].checked=false;
+    }
+    var radios=document.getElementsByName("howinterested");
+    var oki=false;
+    for(var i=0;i<radios.length;i++)
+      {
+        if(radios[i].checked==true)
+        {
+          oki=true;
+          break;
+        }
+      }
+      if(oki==false)
+      {
+        //alert("Please select at least one radio button.");
+        $("#radioDialog").dialog({ modal: true });
+      } 
+    if(!document.getElementById("email").value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}$/i))
+    {
+      //alert("Please enter a valid Email ID.");
+      $("#emailDialog").dialog({ modal: true });
+      document.getElementById("email").value="";
+    }
+        
+        
+  }
+
+  function zipCheck()
+  {
+    zipRequest=new XMLHttpRequest();
+    zipRequest.onreadystatechange=getZip;
+    zipRequest.open('GET',"zip.json",true);
+    zipRequest.send(null);
+  }
+  function getZip()
+  {
+    var okay=false;
+    if(zipRequest.readyState==4 && zipRequest.status==200)
+    {
+      var zipjson=zipRequest.responseText;
+      var zipjsonobj=JSON.parse(zipjson);
+      var zipval=document.getElementById("zip").value;
+      for(var item in zipjsonobj.zipcodes)
+      {
+        if(zipjsonobj.zipcodes[item].zip==zipval)
+        {
+          document.getElementById("city").value=zipjsonobj.zipcodes[item].city;
+          document.getElementById("state").value=zipjsonobj.zipcodes[item].state;
+          okay=true;
+          document.getElementById("ziperr").style.display= "none";
+          break;
+        }
+      }
+      if(okay==false)
+      {
+        //document.getElementById("city").innerHTML="";
+        //document.getElementById("state").innerHTML="";
+        document.getElementById("zip").value="";
+        document.getElementById("ziperr").style.display = "block";
+      }
+    }
+  }
+  function zipErrSet()
+  {
+    document.getElementById("ziperr").style.display = "none";
+  }
+  function clrForm()
+  {
+    document.getElementById("avg").innerHTML="";
+    document.getElementById("max").innerHTML="";
+    document.getElementById("datalert").innerHTML="";
+    document.getElementById("ziperr").innerHTML="";
+    document.getElementById("city").innerHTML="";
+    document.getElementById("state").innerHTML="";
+  }
+
+
+</script>
+</head>
+
+<body onload="zipErrSet()">
+<a href="https://www2.gmu.edu/"><img src="Gmuseal.png" alt="some_text" id="mason_logo" > </a>
+<h1>SURVEY FORM</h1>
+
+<form method="post" action="FormServlet" autocomplete="on" class="cols">
+<div id="nameDialog" title="A jQuery UI Dialog" style="display:none">
+  <p>Please enter a valid name.</p>
+</div>
+<div id="streetDialog" title="A jQuery UI Dialog" style="display:none">
+  <p>Please enter a valid Street Adress.</p>
+</div>
+<div id="checkDialog" title="A jQuery UI Dialog" style="display:none">
+  <p>Please select at least two checkboxes.</p>
+</div>
+<div id="radioDialog" title="A jQuery UI Dialog" style="display:none">
+  <p>Please select at least one radio button.</p>
+</div>
+<div id="emailDialog" title="A jQuery UI Dialog" style="display:none">
+  <p>Please enter a valid email address.</p>
+</div>
+
+<label>First Name
+<br/>
+<input id="FName" name="FName" size = "20" type="text" maxlength="50" autocomplete="on" autofocus required/>
+</label>
+<br/><br/>
+
+<label>Last Name
+<br/>
+<input id="LName" name="LName" size = "20" type="text" maxlength="50" autocomplete="on" autofocus required/>
+</label>
+<br/><br/>
+
+<label>Student ID
+<br/>
+<input id= "StudentID" name = "StudentID" type = "text" size = "20" maxlength = "30" autocomplete = "on" autofocus />
+</label>      
+<br/><br/>
+    
+<label>Street Address
+<br/>
+<input id="street" name = "street" type = "text" size = "20" maxlength = "50" rows="3" cols="50" style="width:300px" autocomplete = "on"/>
+</label>
+<br/><br/>
+
+<label>Zip
+<br/>
+<input name = "zip" id="zip" type = "text" size = "20" maxlength = "6" onblur="zipCheck()" autocomplete = "on"/>
+<span id="ziperr" style= "color:red">Enter valid zipcode</span>
+</label>
+<br/><br/>
+
+<label>City
+<br/>
+<input type="text" name = "city" id = "city" />
+</label>
+<br/><br/>
+
+<label>State
+<br/>
+<input type="text" name = "state" id = "state" />
+</label>
+<br/><br/>
+    
+<label>Phone<br/>
+<input name="phone" id="phone" type = "number" size = "20" maxlength = "50" placeholder="(xxx)-xxx-xxxx" autocomplete = "on"/>
+</label>
+<br/><br/>
+    
+<label>Email<br/>
+<input  name="email" id="email" type = "email" size = "20" maxlength = "50" placeholder="xx@xx.com" autocomplete = "on"/>
+</label>
+<br/><br/>
+
+<label>URL<br/>
+<input name = "url" id="url" value="ewfwef" type = "url" size = "20" maxlength = "30" placeholder="Enter your url" autocomplete = "on"/>
+</label>
+<br/><br/>
+
+<label>Date of Survey<br/>
+<input name = "date" id="date" type = "date" size = "20" maxlength = "50" placeholder="mm/dd/yyyy" required/>
+</label>
+    
+<p>Things that I liked about the campus
+<br/>
+<input name = "thingsliked" type = "checkbox" value = "Students" /><label>Students</label><br/> 
+<input name = "thingsliked" type = "checkbox" value = "Location" /><label>Location</label><br/>
+<input name = "thingsliked" type = "checkbox" value = "Campus" /><label>Campus</label><br/>
+<input name = "thingsliked" type = "checkbox" value = "Atmosphere" /><label>Atmosphere</label><br/>   
+<input name = "thingsliked" type = "checkbox" value = "Dorm Rooms" /><label>Dorm Rooms</label><br/>
+<input name = "thingsliked" type = "checkbox" value = "Sports" /><label>Sports</label>
+</p>
+
+<p>How do you know about this campus
+<br/>   
+<input name = "howinterested" type = "radio" required value = "Friends" /><label>Friends</label><br/>   
+<input name = "howinterested" type = "radio" required value = "Television" /><label>Television</label><br/>   
+<input name = "howinterested" type = "radio" required value = "Internet" /><label>Internet</label><br/>   
+<input name = "howinterested" type = "radio" required value = "Other" /><label>Other</label><br/>
+</p>
+
+<p>
+<label>Additional Comments:<br />
+<textarea name = "comments" rows = "4" cols = "36" placeholder="Enter additional comments here."></textarea>
+</label>
+</p>
+
+When did you graduate high school?
+<br/>
+<label for="txtList">Month:<br/>
+  <input name="GradMonth" type = "text" id = "txtList" placeholder = "Select a month" size = "20" list = "months"  />
+      <datalist id = "months">
+         <option value = "January">
+         <option value = "February">
+         <option value = "March">
+         <option value = "April">
+         <option value = "May">
+         <option value = "June">
+         <option value = "July">
+         <option value = "August">
+         <option value = "September">
+         <option value = "October">
+         <option value = "November">
+         <option value = "December">
+      </datalist>
+</label><br/>
+    
+<label>Year:<br/>
+<input name = "Year" id="Year" type = "number" size = "20" maxlength = "4" placeholder="Enter graduation year" />
+</label>
+    
+<p>Would you recommend George Mason to others?        
+   <select  name = "Likelihood" >
+      <option disabled="disabled" value="">Select an option</option>
+      <option value = "Very Likely">Very Likely</option>
+      <option value = "Likely">Likely</option>
+      <option value = "Unlikely">Unlikely</option>
+   </select>
+</p>
+    
+    
+<label>Data:<br/><input name="Data" id="Data" onblur="dataCalc()" type="text" size="40" maxlength="200" autocomplete="on"/></label>
+<br/><span  id="datalert" style= "color:red"></span>
+    
+<p>
+<input type="submit" value="Submit" onclick="submitForm()"/>
+<input type="reset" value="Reset" "onclick="clrForm()"/>
+</p>
+
+  
+  
+</form>
+<p>Ajay Adithya Rajagopal G01004696</p>
+</body>
+</html>

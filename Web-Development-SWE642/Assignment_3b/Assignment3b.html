@@ -1,0 +1,48 @@
+<html>
+<title>TABS</title>
+<link rel = "stylesheet" type = "text/css" href = "Style.css" />
+<script src="jquery-2.1.4.js" type="text/javascript"></script>
+<script src="jquery-ui-1.11.4.custom/jquery-ui.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.4.custom/jquery-ui.css"/>
+<script type="text/javascript">
+$(function(){$(".hoverGMU").tooltip();});
+
+$(function() 
+{
+$("#tab-div-class").tabs({show:"fold"});
+}
+);
+</script>
+
+<body>
+<div>
+<p>Press tabs for viewing different contents</p>
+</div>
+
+
+<div id="tab-div-class">
+	<ul>
+	<li><a href="#panel1">HomePage</a>
+	<li><a href="#panel2">Assignment 2</a></li>
+	<li><a href="#panel3">SurveyPage</a></li>
+	</ul>
+	
+	<div id="panel1">
+	<iframe class="frameStyle" src="index.html"></iframe> 
+	</div>
+	
+	<div id="panel2">
+	<iframe class="frameStyle" src="Assignment2.html"></iframe> 
+	</div>
+	
+	<div id="panel3">
+	<iframe class="frameStyle" src="SurveyPage.html"></iframe> 
+	</div>
+</div>
+
+
+<a href="http://www.gmu.edu">
+	<img src="gmu.png" alt="GMU logo" class="hoverGMU" title="Please visit http://www.gmu.edu for more information."/>
+</a>
+</body>
+</html>

@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> CS Department </title>
+<link rel="stylesheet" href="Style.css" type="text/css"/>
+<script type="text/javascript">
+
+  
+// Check if there is already a cookie for this page
+var cookie_name;
+if(document.cookie)
+{
+  // if there is a cookie then extract the cookie name from the cookie string
+  var cookie_name_exists = unescape(document.cookie);
+  var cookie_split = cookie_name_exists.split("=");
+  
+  // Set the extracted cookie name 
+  cookie_name = cookie_split[1];
+}
+else
+{
+  var current_time;
+  var cookie_expires_time;
+  
+  current_time = new Date();            // Get current Date
+  current_time.setTime(current_time.getTime() + (5*60*1000));    // Adding to the current time
+  cookie_expires_time = " expires=" + current_time.toUTCString();   // Form the expiration string
+  
+  cookie_name = window.prompt("Kindly Enter your name", "Ajay");   // Prompt the user to enter the cookie name
+   
+  // Set the cookie with the user entered name and an expiration time
+  document.cookie = "cookie_name=" + escape(cookie_name) + ";" + cookie_expires_time; 
+} 
+  
+  
+var now=new Date();
+if(now.getHours()<12)
+  document.write("<h1>Good Morning, ");
+else if(now.getHours()>16)
+  document.write("<h1>Good Evening, ");
+else
+  document.write("<h1>Good Afternoon, ");
+document.writeln(cookie_name+". Welcome to Assignment#3</h1>");
+document.writeln("<a href = 'javascript:resetCookie()'>" + "Please click here if you are not "+cookie_name+".</a>");
+function resetCookie()
+{
+  document.cookie="cookie_name=null; expires=Thu, 18 Aug 2013 00:00:01 UTC";
+  location.reload(true);
+}
+
+function avgMax()
+{
+  var sum=0, avg=0, max=0;
+  if(!document.getElementById("data").value=="")
+  {
+  var dataSet=document.getElementById("data").value.split(",");
+  if(dataSet.length<10)
+    document.getElementById("datalert").innerHTML="Please enter at least ten positive numbers between 1 and 100 sepatated by single commas only.";
+  else
+  {
+    for(var i=0;i<dataSet.length;i++)
+    {
+      if (dataSet[i]<1 || dataSet[i]>100 || isNaN(dataSet[i])|| dataSet[i]=="") 
+      {
+        document.getElementById("datalert").innerHTML="Please enter at least ten positive numbers between 1 and 100 sepatated by single commas only.";
+        document.getElementById("avg").innerHTML="";
+        document.getElementById("max").innerHTML="";
+        return;
+      }
+      else
+        document.getElementById("datalert").innerHTML="";
+    }
+    for(var i=0;i<dataSet.length;i++)
+      sum+=parseInt(dataSet[i]);
+    avg=sum/dataSet.length;
+    for(var i=0;i<dataSet.length;i++)
+    { 
+      if(parseFloat(dataSet[i])>parseFloat(max))
+        max=dataSet[i];
+    }
+    document.getElementById("avg").innerHTML=avg;
+    document.getElementById("max").innerHTML=max;   
+  }
+  }
+  else
+  {
+    document.getElementById("datalert").innerHTML="";
+  }
+    
+}
+function submitForm()
+  {
+  //  var namepatt=/^[A-Z \s]+$/i;
+    if(!document.getElementById("FName").value.match(/^[A-Z]+$/i))
+    {
+      alert("Please enter a valid first name.");
+      document.getElementById("FName").value="";
+    }
+    if(!document.getElementById("LName").value.match(/^[A-Z]+$/i))
+    {
+      alert("Please enter a valid last name.");
+      document.getElementById("LName").value="";
+    }
+    if(!document.getElementById("street").value.match(/^[a-z0-9]+$/i))
+    {
+      alert("Please enter a valid Street Adress.");
+      document.getElementById("street").value="";
+    }
+    var checks=document.getElementsByName("thingsliked")
+    var okie=false;
+    for(var i=0;i<checks.length;i++)
+    {
+      if(checks[i].checked==true)
+      {
+        for(var j=i+1;j<checks.length;j++)
+        {
+          if(checks[j].checked==true)
+          {
+            okie=true;
+            break;
+          }
+        }
+        break;
+      }
+    }
+    if(okie==false)
+    { 
+      alert("Please check at least two ckeckboxes.");
+      for(var i=0;i<checks.length;i++)
+        document.getElementsByName("thingsliked")[i].checked=false;
+    }
+    var radios=document.getElementsByName("hd");
+    var oki=false;
+    for(var i=0;i<radios.length;i++)
+      {
+        if(radios[i].checked==true)
+        {
+          oki=true;
+          break;
+        }
+      }
+      if(oki==false)
+      {
+        alert("Please select at least one radio button.");
+      } 
+    if(!document.getElementById("email").value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}$/i))
+    {
+      alert("Please enter a valid Email ID.");
+      document.getElementById("email").value="";
+    }
+        
+        
+  }
+
+  function zipCheck()
+  {
+    zipRequest=new XMLHttpRequest();
+    zipRequest.onreadystatechange=getZip;
+    zipRequest.open('GET',"zip.json",true);
+    zipRequest.send(null);
+  }
+  function getZip()
+  {
+    var okay=false;
+    if(zipRequest.readyState==4 && zipRequest.status==200)
+    {
+      var zipjson=zipRequest.responseText;
+      var zipjsonobj=JSON.parse(zipjson);
+      var zipval=document.getElementById("zip").value;
+      for(var item in zipjsonobj.zipcodes)
+      {
+        if(zipjsonobj.zipcodes[item].zip==zipval)
+        {
+          document.getElementById("city").innerHTML=zipjsonobj.zipcodes[item].city;
+          document.getElementById("state").innerHTML=zipjsonobj.zipcodes[item].state;
+          okay=true;
+          document.getElementById("ziperr").style.display= "none";
+          break;
+        }
+      }
+      if(okay==false)
+      {
+        document.getElementById("city").innerHTML="";
+        document.getElementById("state").innerHTML="";
+        document.getElementById("zip").value="";
+        document.getElementById("ziperr").style.display = "inline";
+      }
+    }
+  }
+  function zipErrSet()
+  {
+    document.getElementById("ziperr").style.display = "none";
+  }
+  function clrForm()
+  {
+    document.getElementById("avg").innerHTML="";
+    document.getElementById("max").innerHTML="";
+    document.getElementById("datalert").innerHTML="";
+    document.getElementById("ziperr").innerHTML="";
+    document.getElementById("city").innerHTML="";
+    document.getElementById("state").innerHTML="";
+  }
+
+
+</script>
+</head>
+
+<body onload="zipErrSet()">
+<a href="https://www2.gmu.edu/"><img src="Gmuseal.png" alt="some_text" id="mason_logo" > </a>
+<h1>SURVEY FORM</h1>
+
+<a href="Assignment2.html">Back to Information Page</a>
+<br>
+<div id="formDiv">
+<form>
+
+<table id="surveyForm">
+<tbody>
+
+<tr>
+<td>First Name </td>
+<td><input id="FName" maxlength="50" name="FName" type="text" autocomplete="on" autofocus required/><br></td>
+</tr> 
+
+<tr>
+<td>Last Name </td>
+<td><input id="LName" maxlength="50" name="LName" type="text" autocomplete="on" required/><br></td>
+</tr>
+
+<tr>
+<td>Street Address </td>
+<td><input type="text" id="street" maxlength="50" name="street" autocomplete="on" required/></textarea><br></td>
+</tr>
+
+<tr>
+<td>Zip </td>
+<td><input id="zip" maxlength="50" name="zip" type="text" autocomplete="on" onblur="zipCheck()" required/><br></td>
+<td><span id="ziperr" style= "color:red">Please enter a valid zipcode.</span></td>
+</tr>
+
+<tr>
+<td>City </td>
+<td><span name = "city" id = "city"></span></td><br></td>
+</tr>
+
+<tr>
+<td>State </td>
+<td><span name = "state" id = "state"></span></<br></td>
+</tr>
+
+
+
+<tr>
+<td>Phone </td>
+<td><input id="Phone" maxlength="50" name="Phone" type="text" autocomplete="on" 
+           placeholder="(xxx)-xxx-xxxx" required/><br></td>
+</tr>
+
+<tr>
+<td>Email </td>
+<td><input id="email" maxlength="50" name="email" type="text" autocomplete="on" 
+           placeholder="xx@xx.com" required/><br></td>
+</tr>
+
+<tr>
+<td>URL </td>
+<td><input id="URL" maxlength="50" name="URL" type="text" autocomplete="on"/><br></td>
+</tr>
+
+<tr>
+<td>DateOfSurvey </td>
+<td><input id="DateOfSurvey" maxlength="50" name="DateOfSurvey" type="text" autocomplete="on" 
+           placeholder="mm/dd/yyyy" required/><br></td>
+</tr>
+
+<tr>
+  <td><br> <b>Things that you liked about the campus</b> <br> 
+  
+  <input type="checkbox" name="thingsliked" value="students">Students<br>
+  <input type="checkbox" name="thingsliked" value="location">Location<br>
+  <input type="checkbox" name="thingsliked" value="campus">Campus<br>
+  <input type="checkbox" name="thingsliked" value="atmosphere">Atmosphere<br>
+  <input type="checkbox" name="thingsliked" value="dormroom">Dorms<br>
+  <input type="checkbox" name="thingsliked" value="Sports">Sports<br><br></td>
+</tr>  
+
+<tr> 
+  <td><b> How do you know about this campus <br></b>
+
+  <input type="radio" name="hd" value="r_friends" checked>Friends<br>
+  <input type="radio" name="hd" value="r_tv"> T.V<br>
+  <input type="radio" name="hd" value="r_internet">Internet<br>
+  <input type="radio" name="hd" value="r_other"> Other<br><br></td> 
+</tr>
+
+<tr>
+<td>   
+<b>Comments</b> :<br><textarea name="Comments" rows="10" cols="30">
+</textarea>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>Choose High School Month of Graduation</b>
+</td>
+<td>
+<input list="month" name="month" required>
+  <datalist id="month">
+    <option value="January">
+    <option value="February">
+    <option value="March">
+    <option value="April">
+    <option value="May">
+	<option value="June">
+	<option value="July">
+	<option value="August">
+	<option value="Septmber">
+	<option value="October">
+	<option value="November">
+	<option value="Decemner">
+  </datalist>
+</td>
+</tr>
+<tr>
+<td>year of Graduation</td>
+<td><input id="grad_year" maxlength="4" name="grad_year" type="text" required/><br></td>
+</tr>
+
+<tr>
+ <td><b>Would You recommend this school to others?</b> &nbsp
+
+<select name="recommend">
+    <option value="vlikely">Very Likely</option>
+    <option value="likely">Likely</option>
+    <option value="unlikely">Unlikely</option>
+</select>
+</td>  
+</tr>
+</tbody>
+</table> 
+
+<p>Please enter atleast 10 comma separated numbers from 1 to 100</p>
+<p> 
+  <label>Data:<input name="data" id="data" onblur="avgMax()" type="text" size="40" maxlength="200" autocomplete="on"/></label>
+  <br/><span name="datalert" id="datalert" style= "color:red"></span>
+  <br/><label>Average:<span name="avg" id="avg"></span></label>
+  <br/><label>Maximum:<span name="max" id="max"></span></label>
+</p>
+
+<p>
+<br>
+  <input type="submit" value="Submit" onclick="submitForm()" /> 
+  <input type="reset" value="Reset" onclick="clrForm()" />
+</p>
+
+  
+  
+</form></div>
+<p>Ajay Adithya Rajagopal G01004696</p>
+</body>
+</html>

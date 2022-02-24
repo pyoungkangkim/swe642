@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	<package name="default" namespace="/" extends="struts-default">
+    <action name="survey" class="form.mainclass">	
+		<result name="normal">simpleAcknowledgement.jsp</result>
+		<result name="congrats">winnerAcknowledgement.jsp</result>
+		<result name="stulist">StudentJSP.jsp</result>
+		<result name="fail">NoSuchStudent.jsp</result>
+	</action>
+	<action name="list" class="form.mainclass" method="getMethod">
+		<result name="stulist">StudentJSP.jsp</result>
+	</action>
+	</package>
+	</struts>
