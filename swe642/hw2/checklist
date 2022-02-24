@@ -17,17 +17,17 @@
     box called “Data”, and two output fields labeled Average and Maximum on the Student
     Survey Form.
 
-    [ ] - A user is required to enter ten comma separated numbers ranging from 1 through 100 in
+    [x] - A user is required to enter ten comma separated numbers ranging from 1 through 100 in
     the Data field.
 
-    [ ] - Create JavaScript function(s) that will calculate Average and Maximum of the numbers
+    [x] - Create JavaScript function(s) that will calculate Average and Maximum of the numbers
     entered in the Data field.
 
-    [ ] - When the user is finished typing ten numbers and moves out of the Data field, the system
+    [x] - When the user is finished typing ten numbers and moves out of the Data field, the system
     should automatically compute the average and maximum of the ten numbers entered in
     the data field and populate Average and Maximum output fields.
 
-    [ ] - Make sure the Data field contains at least ten comma separated values between 1 and 100
+    [x] - Make sure the Data field contains at least ten comma separated values between 1 and 100
     (inclusive), else print an error message.
 
 
