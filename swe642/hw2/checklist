@@ -1,16 +1,17 @@
-• Cookie and Greetings Implementation – On the Student Survey Form Page, use a cookie to
-    hold a user's information and display a greeting with the user’s name from the cookie. The
-    greeting displayed should be an appropriate greeting based on the time of the day (e.g., good
-    morning, good afternoon, or good evening) when a user visits the web site. (An example of such
-    greeting is “Good Afternoon John, welcome to SWE642 Survey” when the user John visits your
-    page in the afternoon).
+• Cookie and Greetings Implementation –
+
+    [x] - On the Student Survey Form Page, use a cookie to hold a user's information and display
+    a greeting with the user’s name from the cookie. The greeting displayed should be an appropriate
+    greeting based on the time of the day (e.g., good morning, good afternoon, or good evening)
+    when a user visits the web site. (An example of such greeting is “Good Afternoon John, welcome
+    to SWE642 Survey” when the user John visits your page in the afternoon).
 
     [] - If the name stored in the cookie is different from the user opening your page, have a
     hyperlink that prompts the user to enter his/her name. Use the correct name to reset the
     document’s cookie. You may need to reload the page (automatically) to get the new name
     after resetting the cookie. Set an expiration time for the cookie.
 
-    [] - If no cookie has been set, then prompt the user to enter his/her name and set the cookie.
+    [x] - If no cookie has been set, then prompt the user to enter his/her name and set the cookie.
 
 • Survey Form Extension and Average & Maximum Computation – Add an additional text
     box called “Data”, and two output fields labeled Average and Maximum on the Student

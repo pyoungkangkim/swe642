@@ -3,6 +3,28 @@
     <title>pkim23 swe642 HW1</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript">
+        if (document.cookie) {
+            // use a cookie to hold a user's information and display
+            // a greeting with the user’s name from the cookie.
+            const hour = new Date().getHours()
+            const partOfDay = hour <= 12 ? 'Morning' : (hour < 18 ? 'Afternoon' : 'Evening');
+            const username = document.cookie.split('=')[1];
+            alert("Good " + partOfDay + " " + username + ", welcome to SWE642 Survey");
+            if (window.confirm('If you are not ' + username + ' click Ok to re enter your username')) {
+                document.cookie = "username=" + 'null' + ";" + 'Max-Age=-99999999;';
+                window.location.reload(true);
+            }
+        } else {
+            // Set an expiration time for the cookie.
+            const oneDayFromNow = new Date();
+            oneDayFromNow.setDate(oneDayFromNow.getDate() + 1);
+            // If no cookie has been set, then prompt the user to enter his/her name and set the cookie.
+            const username = window.prompt("Please enter your name");
+            // Set the cookie with the user entered name and an expiration time
+            document.cookie = "username=" + username + ";expires=" + oneDayFromNow.toUTCString();
+        }
+    </script>
 
 </head>
 
