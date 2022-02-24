@@ -11,18 +11,45 @@
             const partOfDay = hour <= 12 ? 'Morning' : (hour < 18 ? 'Afternoon' : 'Evening');
             const username = document.cookie.split('=')[1];
             alert("Good " + partOfDay + " " + username + ", welcome to SWE642 Survey");
-            if (window.confirm('If you are not ' + username + ' click Ok to re enter your username')) {
-                document.cookie = "username=" + 'null' + ";" + 'Max-Age=-99999999;';
+            // If the name stored in the cookie is different from the user opening your page, have a
+            // hyperlink that prompts the user to enter his/her name.
+                const reenterUsername = () => {
+                document.cookie = 'username=' + 'null' + ';' + 'Max-Age=-99999999;';
                 window.location.reload(true);
-            }
+            };
+            document.writeln("<a href='javascript:reenterUsername()'>" + "If you are not " + username +
+                ", click here to re enter your username"  + ".</a>");
         } else {
             // Set an expiration time for the cookie.
             const oneDayFromNow = new Date();
             oneDayFromNow.setDate(oneDayFromNow.getDate() + 1);
             // If no cookie has been set, then prompt the user to enter his/her name and set the cookie.
-            const username = window.prompt("Please enter your name");
+            const username = window.prompt('Please enter your name');
             // Set the cookie with the user entered name and an expiration time
-            document.cookie = "username=" + username + ";expires=" + oneDayFromNow.toUTCString();
+            document.cookie = 'username=' + username + ';expires=' + oneDayFromNow.toUTCString();
+        }
+        function avgmax()
+        {
+            if(!document.getElementById('dataField')) {
+                return;
+            }
+            const isNumeric = str => !isNaN(str) && !isNaN(parseFloat(str));
+            // A user is required to enter ten comma separated numbers ranging from 1 through 100 in
+            // the Data field.
+            let data = document.getElementById('dataField').value.split(',');
+            let isValid = data.length === 10 && data.every(e => isNumeric(e) && e >= 1 && e <= 100);
+            console.log(data.length)
+            if (!isValid) {
+                // Make sure the Data field contains at least ten comma separated values between 1 and 100
+                // (inclusive), else print an error message.
+                alert('Please enter ten comma separated values between 1 and 100 in Data Field.')
+                return
+            }
+            data = data.map(e => Number(e))
+            const avg = data.reduce((a, b) => a + b, 0) / data.length;
+            const max = data.reduce((a, b) => Math.max(a, b), 0)
+            document.getElementById('avg').innerHTML = avg;
+            document.getElementById('max').innerHTML = max;
         }
     </script>
 
@@ -170,6 +197,16 @@
         <div class="w3-group">
             <textarea class="w3-input" style="width:100%"></textarea>
             <label class="w3-label">Additional comments</label>
+        </div>
+        <br>
+        <div class="w3-group">
+            <p>Enter ten comma separated numbers ranging from 1 through 100</p>
+            <p>
+                Data Field<input id="dataField" onblur="avgmax()" style="width:100%"/>
+                <br/><span id="datalert" style= "color:red"></span>
+                <br/><label class="w3-half" style="font-size: 1.2em">Average:<span id="avg"></span></label>
+                <label class="w3-half" style="font-size: 1.2em">Maximum:<span id="max"></span></label>
+            </p>
         </div>
         <br>
         <div class="w3-container">

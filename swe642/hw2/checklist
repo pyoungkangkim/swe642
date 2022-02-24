@@ -6,7 +6,7 @@
     when a user visits the web site. (An example of such greeting is “Good Afternoon John, welcome
     to SWE642 Survey” when the user John visits your page in the afternoon).
 
-    [] - If the name stored in the cookie is different from the user opening your page, have a
+    [x] - If the name stored in the cookie is different from the user opening your page, have a
     hyperlink that prompts the user to enter his/her name. Use the correct name to reset the
     document’s cookie. You may need to reload the page (automatically) to get the new name
     after resetting the cookie. Set an expiration time for the cookie.
@@ -17,7 +17,7 @@
     box called “Data”, and two output fields labeled Average and Maximum on the Student
     Survey Form.
 
-    [ ] - A user is required to enter ten comma separated numbers ranging from 1 through100 in
+    [ ] - A user is required to enter ten comma separated numbers ranging from 1 through 100 in
     the Data field.
 
     [ ] - Create JavaScript function(s) that will calculate Average and Maximum of the numbers
