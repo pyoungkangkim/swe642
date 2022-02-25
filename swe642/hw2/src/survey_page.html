@@ -52,39 +52,55 @@
             document.getElementById('avg').innerHTML = avg;
             document.getElementById('max').innerHTML = max;
         }
-        // jquery selector and opener
+        function validateForm() {
+            alert('wdt')
+            $("#error-msgs").dialog("open");
+            alert('tt')
+            // document.getElementById("#dialog-1").dialog("open");
+            // const alphaNumericPattern = "^[a-zA-Z0-9]+$";
+            // const alphaPattern = "^[a-zA-Z]+$";
+            // const numericPattern = "^[0-9]+$";
+            //
+            // // The Name text box should contain only Alphabets.
+            // const name = document.getElementById('form-username').value;
+            // const nameIsValid = name.match(alphaPattern)
+            //
+            // // The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
+            // const street = document.getElementById('form-street').value.replace(/\s\s+/g, ' ').split(' ');
+            // const isNumeric = str => !isNaN(str) && !isNaN(parseFloat(str));
+            // const streetIsValid = street.length > 1 && isNumeric(street[0]) &&
+            //                         street.every(e => e.match(alphaNumericPattern));
+            // const city = document.getElementById('form-city').value;
+            // const cityIsValid = street.match(alphaPattern);
+            // const state = document.getElementById('state').value;
+            // const stateIsValid = street.match(alphaPattern);
+            // const zip = document.getElementById('zip').value;
+            // const zipIsValid = zip.match(numericPattern);
+            //
+            // // Make sure at least two checkboxes are checked.
+            // const liked = Array.from(document.getElementsByName('liked')).filter(e => e.checked === true);
+            // const likedIsValid = liked.length > 1;
+            //
+            // // Make sure a radio button option is selected.
+            // const interestedReasons = Array.from(document.getElementsByName('interested-reason'))
+            //                                 .filter(e => e.checked === true);
+            // const interestedReasonsIsValid = interestedReasons.length > 0;
+            //
+            // // The Email address format should be valid.
+            // const email = document.getElementById('form-email');
+            // const emailIsValid = email.match('^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$');
+        }
+        // initialize consolidated error message of validation errors
         $(function () {
-            $("#dialog-1").dialog({
-                autoOpen: false,
-            });
-            $("#opener").click(function () {
-                $("#dialog-1").dialog("open");
+            $("#error-msgs").dialog({
+                maxWidth:600,
+                maxHeight: 500,
+                width: 600,
+                height: 500,
+                modal: true,
+                // autoOpen: false,
             });
         });
-        function validateForm() {
-            const alphaNumericPattern = "^[a-zA-Z0-9]+$";
-            const alphaPattern = "^[a-zA-Z]+$";
-            const numericPattern = "^[0-9]+$";
-            // The Name text box should contain only Alphabets.
-            const name = document.getElementById('form-username').value;
-            const nameIsValid = name.match(alphaNumericPattern)
-
-            // The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
-            const street = document.getElementById('form-street').value.replace(/\s\s+/g, ' ').split(' ');
-            const isNumeric = str => !isNaN(str) && !isNaN(parseFloat(str));
-            const streetIsValid = street.length > 1 && isNumeric(street[0]) &&
-                                    street.every(e => e.match(alphaNumericPattern));
-            const city = document.getElementById('form-city').value;
-            const cityIsValid = street.match(alphaPattern);
-            const state = document.getElementById('state').value;
-            const stateIsValid = street.match(alphaPattern);
-            const zip = document.getElementById('zip').value;
-            const zipIsValid = zip.match(numericPattern);
-
-            // Make sure at least two checkboxes are checked.
-            // Make sure a radio button option is selected.
-            // The Email address format should be valid.
-        }
     </script>
     <style>
         .ui-widget-header,.ui-state-default, ui-button {
@@ -106,8 +122,19 @@
 
 <body>
 <!--Your validation warning errors should be implemented using jQuery UI modal window-->
-<div id = "dialog-1" title = "Dialog Title goes here...">This my first jQuery UI Dialog!</div>
-<button id = "opener">Open Dialog</button>
+<div id="error-msgs" title="Valid inputs for form">
+    <p>Please make sure</p>
+    <p><strong>1. </strong>The Name text box should contain only Alphabets.</p>
+    <p>&#09;- for example: John</p>
+    <p><strong>2. </strong>The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.</p>
+    <p>&#09;- street must be of form:    numbers([0-9]+)  alphanumeric([a-zA-Z0-9]+) </p>
+    <p>&#09;- for example:  12345 somestreet</p>
+    <p><strong>3. </strong>Make sure at least two checkboxes are checked.</p>
+    <p><strong>4. </strong>Make sure a radio button option is selected.</p>
+    <p><strong>5. </strong>The Email should be of form:  ^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$</p>
+    <p>&#09;- for example:   johndoe@gmail.com</p>
+    <p><strong>The fields that are invalid have been automatically cleared, please try again.</strong></p>
+</div>
 <!--Survey Section-->
 <section class="survey">
     <div class="w3-group">
@@ -116,40 +143,40 @@
     </div>
     <form class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm()">
         <div class="w3-group">
-            <input id="form-username" class="w3-input" type="text" style="width:100%" required placeholder="jdoe24" autofocus>
-            <label for="form-username" class="w3-label required-field">User Name</label>
+            <input id="form-username" class="w3-input" type="text" style="width:100%"  placeholder="John" autofocus>
+            <label for="form-username" class="w3-label -field">User Name</label>
         </div>
         <div class="w3-group">
-            <input id="form-street" class="w3-input" type="text" style="width:100%" required placeholder="12345 John Doe Street">
-            <label for="form-street" class="w3-label required-field">Street Address</label>
+            <input id="form-street" class="w3-input" type="text" style="width:100%"  placeholder="12345 John Doe Street">
+            <label for="form-street" class="w3-label -field">Street Address</label>
         </div>
         <div class="w3-third">
-            <input id="form-city" class="w3-input" type="text" style="width:87%" required placeholder="John Doe City">
-            <label for="form-city" class="w3-label required-field">City</label>
+            <input id="form-city" class="w3-input" type="text" style="width:87%"  placeholder="John Doe City">
+            <label for="form-city" class="w3-label -field">City</label>
         </div>
         <div class="w3-third">
-            <input id="form-state" class="w3-input" type="text" style="width:87%" required placeholder="VA">
-            <label for="form-state" class="w3-label required-field">State</label>
+            <input id="form-state" class="w3-input" type="text" style="width:87%"  placeholder="VA">
+            <label for="form-state" class="w3-label -field">State</label>
         </div>
         <div class="w3-third">
-            <input id="form-zip" class="w3-input" type="text" style="width:100%" required placeholder="12345">
-            <label for="form-zip" class="w3-label required-field">Zip</label>
+            <input id="form-zip" class="w3-input" type="text" style="width:100%"  placeholder="12345">
+            <label for="form-zip" class="w3-label -field">Zip</label>
         </div>
         <div class="w3-half">
-            <input id="form-telephone" class="w3-input" type="text" style="width:90%" required placeholder="1-(123)-123-1234">
-            <label for="form-telephone" class="w3-label required-field">Telephone Number</label>
+            <input id="form-telephone" class="w3-input" type="text" style="width:90%"  placeholder="1-(123)-123-1234">
+            <label for="form-telephone" class="w3-label -field">Telephone Number</label>
         </div>
         <div class="w3-half">
-            <input id="form-email" class="w3-input" type="text" style="width:100%" required placeholder="myemail@email.com">
-            <label for="form-email" class="w3-label required-field">E-mail</label>
+            <input id="form-email" class="w3-input" type="text" style="width:100%"  placeholder="myemail@email.com">
+            <label for="form-email" class="w3-label -field">E-mail</label>
         </div>
         <div class="w3-half">
             <input id="form-url" class="w3-input" type="text" style="width:90%" placeholder="mypersonalurl.com">
-            <label for="form-url" class="w3-label required-field">URL</label>
+            <label for="form-url" class="w3-label -field">URL</label>
         </div>
         <div class="w3-half">
-            <input id="form-date" class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000">
-            <label for="form-date" class="w3-label required-field">Date of Survey</label>
+            <input id="form-date" class="w3-input" type="text" style="width:100%"  placeholder="01/01/2000">
+            <label for="form-date" class="w3-label -field">Date of Survey</label>
         </div>
         <br>
         <strong>Provide a checklist of what you liked most about the campus</strong>
@@ -158,29 +185,29 @@
         <div class="w3-row">
             <div class="w3-half">
                 <label class="w3-checkbox">
-                    <input type="checkbox"> Students
+                    <input type="checkbox" name="liked"> Students
                     <div class="w3-checkmark"></div>
                 </label>
                 <label class="w3-checkbox">
-                    <input type="checkbox"> Location
+                    <input type="checkbox" name="liked"> Location
                     <div class="w3-checkmark"></div>
                 </label>
                 <label class="w3-checkbox">
-                    <input type="checkbox"> Campus
+                    <input type="checkbox" name="liked"> Campus
                     <div class="w3-checkmark"></div>
                 </label>
             </div>
             <div class="w3-half">
                 <label class="w3-checkbox">
-                    <input type="checkbox"> Atmosphere
+                    <input type="checkbox" name="liked"> Atmosphere
                     <div class="w3-checkmark"></div>
                 </label>
                 <label class="w3-checkbox">
-                    <input type="checkbox"> Dorm Rooms
+                    <input type="checkbox" name="liked"> Dorm Rooms
                     <div class="w3-checkmark"></div>
                 </label>
                 <label class="w3-checkbox">
-                    <input type="checkbox"> Sports
+                    <input type="checkbox" name="liked"> Sports
                     <div class="w3-checkmark"></div>
                 </label>
                 <br>

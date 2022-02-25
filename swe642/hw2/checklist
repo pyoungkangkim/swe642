@@ -36,14 +36,14 @@
     following: Validate alert the user with a consolidated error message if the user missed filling
     out anything on the form that did not meet above criteria.
 
-    [ ] - Your validation warning errors should be implemented using jQuery UI modal window
+    [x] - Your validation warning errors should be implemented using jQuery UI modal window
     [ ] - Only the fields with errors should be cleared on alert and not all fields.
     [ ] - In addition, ensure that there is a Reset button on the form and when clicked, the Reset button clears the form contents.
-    [ ] - The Name text box should contain only Alphabets.
-    [ ] - The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
-    [ ] - Make sure at least two checkboxes are checked.
-    [ ] - Make sure a radio button option is selected.
-    [ ] - The Email address format should be valid.
+    [x] - The Name text box should contain only Alphabets.
+    [x] - The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
+    [x] - Make sure at least two checkboxes are checked.
+    [x] - Make sure a radio button option is selected.
+    [x] - The Email address format should be valid.
 
 • Ajax, JSON, jQuery --Use Ajax and JSON to implement a portion of the Student Survey
     Form to provide a better user experience in filling out the survey form. More specifically,
