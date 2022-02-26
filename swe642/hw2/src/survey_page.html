@@ -53,42 +53,63 @@
             document.getElementById('max').innerHTML = max;
         }
         function validateForm() {
-            alert('wdt')
+            document.getElementById("#dialog-1").dialog("open");
+            const alphaNumericPattern = "^[a-zA-Z0-9]+$";
+            const alphaPattern = "^[a-zA-Z]+$";
+            const numericPattern = "^[0-9]+$";
+
+            // The Name text box should contain only Alphabets.
+            const name = document.getElementById('form-username').value;
+            const nameIsValid = name.match(alphaPattern)
+
+            // The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
+            const street = document.getElementById('form-street').value.replace(/\s\s+/g, ' ').split(' ');
+            const isNumeric = str => !isNaN(str) && !isNaN(parseFloat(str));
+            const streetIsValid = street.length > 1 && isNumeric(street[0]) &&
+                                    street.every(e => e.match(alphaNumericPattern));
+
+            const city = document.getElementById('form-city').value;
+            const cityIsValid = city.match(alphaPattern);
+            const state = document.getElementById('form-state').value;
+            const stateIsValid = state.match(alphaPattern);
+            const zip = document.getElementById('form-zip').value;
+            const zipIsValid = zip.match(numericPattern);
+
+            // Make sure at least two checkboxes are checked.
+            const liked = Array.from(document.getElementsByName('liked')).filter(e => e.checked === true);
+            const likedIsValid = liked.length > 1;
+
+            // Make sure a radio button option is selected.
+            const interestedReasons = Array.from(document.getElementsByName('interested-reason'))
+                                            .filter(e => e.checked === true);
+            const interestedReasonsIsValid = interestedReasons.length > 0;
+
+            // The Email address format should be valid.
+            const email = document.getElementById('form-email');
+            const emailIsValid = email.match('^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$');
+
+            const clearInvalidInnerHTML = (id, valid) => {
+                if (!valid) {
+                    document.getElementById(id).innerHTML = ''
+                }
+            }
+
+            // clear invalid fields
+            clearInvalidInnerHTML('form-name', nameIsValid);
+            clearInvalidInnerHTML('form-street', streetIsValid);
+            clearInvalidInnerHTML('form-city', cityIsValid);
+            clearInvalidInnerHTML('form-state', stateIsValid);
+            clearInvalidInnerHTML('form-zip', zipIsValid);
+            if (!likedIsValid) {
+                liked.forEach(like => like.checked = false);
+            }
+            if (!interestedReasonsIsValid) {
+                interestedReasons.forEach(interestedReason => interestedReason.checked = false);
+            }
+            clearInvalidInnerHTML('form-email', emailIsValid);
+
+
             $("#error-msgs").dialog("open");
-            alert('tt')
-            // document.getElementById("#dialog-1").dialog("open");
-            // const alphaNumericPattern = "^[a-zA-Z0-9]+$";
-            // const alphaPattern = "^[a-zA-Z]+$";
-            // const numericPattern = "^[0-9]+$";
-            //
-            // // The Name text box should contain only Alphabets.
-            // const name = document.getElementById('form-username').value;
-            // const nameIsValid = name.match(alphaPattern)
-            //
-            // // The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
-            // const street = document.getElementById('form-street').value.replace(/\s\s+/g, ' ').split(' ');
-            // const isNumeric = str => !isNaN(str) && !isNaN(parseFloat(str));
-            // const streetIsValid = street.length > 1 && isNumeric(street[0]) &&
-            //                         street.every(e => e.match(alphaNumericPattern));
-            // const city = document.getElementById('form-city').value;
-            // const cityIsValid = street.match(alphaPattern);
-            // const state = document.getElementById('state').value;
-            // const stateIsValid = street.match(alphaPattern);
-            // const zip = document.getElementById('zip').value;
-            // const zipIsValid = zip.match(numericPattern);
-            //
-            // // Make sure at least two checkboxes are checked.
-            // const liked = Array.from(document.getElementsByName('liked')).filter(e => e.checked === true);
-            // const likedIsValid = liked.length > 1;
-            //
-            // // Make sure a radio button option is selected.
-            // const interestedReasons = Array.from(document.getElementsByName('interested-reason'))
-            //                                 .filter(e => e.checked === true);
-            // const interestedReasonsIsValid = interestedReasons.length > 0;
-            //
-            // // The Email address format should be valid.
-            // const email = document.getElementById('form-email');
-            // const emailIsValid = email.match('^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$');
         }
         // initialize consolidated error message of validation errors
         $(function () {
