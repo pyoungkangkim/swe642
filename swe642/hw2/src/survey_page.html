@@ -7,6 +7,11 @@
     <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
     <script src="jquery-ui-1.13.1/jquery-ui.js" type="text/javascript"></script>
     <script type="text/javascript">
+        function reenterUsername() {
+            document.cookie = 'username=' + 'null' + ';' + 'Max-Age=-99999999;';
+            window.location.reload(true);
+        }
+
         if (document.cookie) {
             // use a cookie to hold a user's information and display
             // a greeting with the user’s name from the cookie.
@@ -16,10 +21,6 @@
             alert("Good " + partOfDay + " " + username + ", welcome to SWE642 Survey");
             // If the name stored in the cookie is different from the user opening your page, have a
             // hyperlink that prompts the user to enter his/her name.
-                const reenterUsername = () => {
-                document.cookie = 'username=' + 'null' + ';' + 'Max-Age=-99999999;';
-                window.location.reload(true);
-            };
             document.writeln("<a href='javascript:reenterUsername()'>" + "If you are not " + username +
                 ", click here to re enter your username"  + ".</a>");
         } else {
@@ -44,14 +45,16 @@
             if (!isValid) {
                 // Make sure the Data field contains at least ten comma separated values between 1 and 100
                 // (inclusive), else print an error message.
-                alert('Please enter ten comma separated values between 1 and 100 in Data Field.');
-                return
+                document.getElementById('dataFieldMsg').innerHTML =
+                    '<span style="color: red">Please enter ten comma separated values between 1 and 100 in Data Field.</span>';
+                return;
             }
             data = data.map(e => Number(e));
             const avg = data.reduce((a, b) => a + b, 0) / data.length;
             const max = data.reduce((a, b) => Math.max(a, b), 0);
             document.getElementById('avg').innerHTML = avg;
             document.getElementById('max').innerHTML = max;
+            document.getElementById('dataFieldMsg').innerHTML = '';
         }
 
         function validateForm() {
@@ -105,8 +108,10 @@
 
             if (nameIsValid && streetIsValid && cityIsValid && stateIsValid && zipIsValid
                 && emailIsValid && likedIsValid && interestedReasonsIsValid) {
-                alert('Congradulations, your form was submitted successfully');
-                window.location.reload(true);
+                alert('Congratulations, your form was submitted successfully');
+                // window.location.reload(true);
+                window.location.replace("intro_landing_page.html");
+
             } else {
                 // open jquery validation dialog
                 $("#error-msgs").dialog("open");
@@ -137,6 +142,7 @@
             document.getElementById('avg').innerHTML =''
             document.getElementById('max').innerHTML =''
             document.getElementById('zip-label').innerHTML = 'Zip<span style="color:red">*</span>';
+            document.getElementById('dataFieldMsg').innerHTML = '';
         }
 
         function zipEventHandler() {
@@ -193,7 +199,7 @@
         </div>
         <br>
     </div>
-    <form id='form' class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm(); return false">
+    <form id='form' class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm(); return false;">
         <div class="w3-group">
             <input id="form-username" class="w3-input" type="text" style="width:100%" required placeholder="John" autofocus>
             <label for="form-username" class="w3-label required-field">User Name</label>
@@ -328,7 +334,8 @@
         <div class="w3-group">
             <p>Enter ten comma separated numbers ranging from 1 through 100</p>
             <p>Data Field<input id="dataField" onblur="avgmax()" style="width:100%"/>
-                <br/><br/>
+                <div id="dataFieldMsg"></div>
+                <br/>
                 <strong class="w3-half" style="font-size: 1.2em" id="form-avg">Average:<span id="avg"></span></strong>
                 <strong class="w3-half" style="font-size: 1.2em" id="form-max">Maximum:<span id="max"></span></strong>
             </p>
