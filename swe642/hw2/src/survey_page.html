@@ -53,7 +53,6 @@
             document.getElementById('max').innerHTML = max;
         }
         function validateForm() {
-            document.getElementById("#dialog-1").dialog("open");
             const alphaNumericPattern = "^[a-zA-Z0-9]+$";
             const alphaPattern = "^[a-zA-Z]+$";
             const numericPattern = "^[0-9]+$";
@@ -85,29 +84,23 @@
             const interestedReasonsIsValid = interestedReasons.length > 0;
 
             // The Email address format should be valid.
-            const email = document.getElementById('form-email');
+            const email = document.getElementById('form-email').value;
             const emailIsValid = email.match('^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$');
 
-            const clearInvalidInnerHTML = (id, valid) => {
-                if (!valid) {
-                    document.getElementById(id).innerHTML = ''
+            const clearInvalidField = (id, valid) => {
+                if (!valid && document.getElementById(id)) {
+                    alert(id)
+                    document.getElementById(id).value = ''
                 }
             }
 
             // clear invalid fields
-            clearInvalidInnerHTML('form-name', nameIsValid);
-            clearInvalidInnerHTML('form-street', streetIsValid);
-            clearInvalidInnerHTML('form-city', cityIsValid);
-            clearInvalidInnerHTML('form-state', stateIsValid);
-            clearInvalidInnerHTML('form-zip', zipIsValid);
-            if (!likedIsValid) {
-                liked.forEach(like => like.checked = false);
-            }
-            if (!interestedReasonsIsValid) {
-                interestedReasons.forEach(interestedReason => interestedReason.checked = false);
-            }
-            clearInvalidInnerHTML('form-email', emailIsValid);
-
+            clearInvalidField('form-name', nameIsValid);
+            clearInvalidField('form-street', streetIsValid);
+            clearInvalidField('form-city', cityIsValid);
+            clearInvalidField('form-state', stateIsValid);
+            clearInvalidField('form-zip', zipIsValid);
+            clearInvalidField('form-email', emailIsValid);
 
             $("#error-msgs").dialog("open");
         }
@@ -119,7 +112,7 @@
                 width: 600,
                 height: 500,
                 modal: true,
-                // autoOpen: false,
+                autoOpen: false
             });
         });
     </script>
