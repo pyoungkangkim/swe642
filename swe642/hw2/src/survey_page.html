@@ -33,6 +33,8 @@
             const username = window.prompt('Please enter your name');
             // Set the cookie with the user entered name and an expiration time
             document.cookie = 'username=' + username + ';expires=' + oneDayFromNow.toUTCString();
+            // If the name stored in the cookie is different from the user opening your page, have a
+            // hyperlink that prompts the user to enter his/her name.
             document.writeln("<a href='javascript:reenterUsername()'><span style='color: red'>"
                 + "If you are not " + username + ", click here to re enter your username"  + ".</span></a>");
         }
