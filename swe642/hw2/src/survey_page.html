@@ -95,13 +95,14 @@
             }
 
             // clear invalid fields
-            clearInvalidField('form-name', nameIsValid);
+            clearInvalidField('form-username', nameIsValid);
             clearInvalidField('form-street', streetIsValid);
             clearInvalidField('form-city', cityIsValid);
             clearInvalidField('form-state', stateIsValid);
             clearInvalidField('form-zip', zipIsValid);
             clearInvalidField('form-email', emailIsValid);
 
+            // open jquery validation dialog
             $("#error-msgs").dialog("open");
         }
         // initialize consolidated error message of validation errors
@@ -135,20 +136,6 @@
 </header>
 
 <body>
-<!--Your validation warning errors should be implemented using jQuery UI modal window-->
-<div id="error-msgs" title="Valid inputs for form">
-    <p>Please make sure</p>
-    <p><strong>1. </strong>The Name text box should contain only Alphabets.</p>
-    <p>&#09;- for example: John</p>
-    <p><strong>2. </strong>The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.</p>
-    <p>&#09;- street must be of form:    numbers([0-9]+)  alphanumeric([a-zA-Z0-9]+) </p>
-    <p>&#09;- for example:  12345 somestreet</p>
-    <p><strong>3. </strong>Make sure at least two checkboxes are checked.</p>
-    <p><strong>4. </strong>Make sure a radio button option is selected.</p>
-    <p><strong>5. </strong>The Email should be of form:  ^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$</p>
-    <p>&#09;- for example:   johndoe@gmail.com</p>
-    <p><strong>The fields that are invalid have been automatically cleared, please try again.</strong></p>
-</div>
 <!--Survey Section-->
 <section class="survey">
     <div class="w3-group">
@@ -298,6 +285,22 @@
         <p><button class="w3-button w3-block w3-green w3-col" style="color: #006633;">Submit</button></p>
         </div>
     </form>
+    <!--Your validation warning errors should be implemented using jQuery UI modal window-->
+    <div id="error-msgs" title="Valid inputs for form">
+        <p>Please make sure</p>
+        <p><strong>1. </strong>The Name text box should contain only Alphabets.</p>
+        <p>&#09;- for example: John</p>
+        <p><strong>2. </strong>The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.</p>
+        <p>&#09;- street must be of form:    numeric([0-9]+)  alphanumerics(([a-zA-Z0-9]+)+) </p>
+        <p>&#09;- for example:  12345 somestreet</p>
+        <p>&#09;- city and state must be of form: alphabet([a-zA-Z]+)</p>
+        <p>&#09;- zip must be of form: numeric([0-9]+)</p>
+        <p><strong>3. </strong>Make sure at least two checkboxes are checked.</p>
+        <p><strong>4. </strong>Make sure a radio button option is selected.</p>
+        <p><strong>5. </strong>The Email should be of form:  ^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$</p>
+        <p>&#09;- for example:   johndoe@gmail.com</p>
+        <p><strong>The fields that are invalid have been automatically cleared, please try again.</strong></p>
+    </div>
 </section>
 
 <!--Footer-->
