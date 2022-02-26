@@ -111,7 +111,7 @@
     You do not need to replicate entire Volgenau school’s site – just demonstrate the use of
     jquery UI tabs.
 
-    [ ] - In addition to CSS file that you have developed for your application, please make sure
+    [x] - In addition to CSS file that you have developed for your application, please make sure
     your application includes the CSS file that comes with the jQuery UI download. This will
     ensure that the jQuery/jQuery UI capabilities are rendered as expected.
 
