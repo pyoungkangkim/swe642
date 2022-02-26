@@ -50,7 +50,7 @@
     when a user enters a zipcode, populate the city and state fields automatically based on the
     zip entered, using Ajax. The following is the detailed specification of this requirement.
 
-    [ ] - Please add entries on the Student Survey Form to capture a student’s personal
+    [x] - Please add entries on the Student Survey Form to capture a student’s personal
     information that will allow the department to follow up with students. The personal
     information will include: Name, Address, Telephone Number, and Email (I think some of
     this information is already there on the Survey Form). To capture the Address, provide
@@ -63,8 +63,7 @@
     (i.e., Zipcodes) returned from the server. If a match is found, then populate the City and
     State fields automatically by retrieving the corresponding city and state from the JSON
     file. Else, display “an invalid zip” message next to the zipcode field.
-
-    [ ] - To implement this assignment, you will need to develop a JavaScript function that could
+    To implement this assignment, you will need to develop a JavaScript function that could
     be used as an event handler. Register this event handler to handle the “onblur” event
     associated with the Zipcode element on the Survey Form. The event handler makes an
     Ajax call to the server to get a list of valid Zipcodes along with corresponding City and
@@ -83,18 +82,27 @@
     server.
 
     {
-    	"zipcodes": [
+        "zipcodes": [{
+                "zip": "22312",
+                "city": "Alexandria",
+                "state": "VA"
+            },
             {
-    			"zip": "22312",
-    			"city": "Alexandria",
-    			"state": "VA"
-    		},
-    		{
-    			"zip": "22030",
-    			"city": "Fairfax",
-    			"state": "VA"
-    		}
-    	]
+                "zip": "22030",
+                "city": "Fairfax",
+                "state": "VA"
+            },
+            {
+                "zip": "22301",
+                "city": "Rockville",
+                "state": "MD"
+            },
+            {
+                "zip": "20148",
+                "city": "Ashburn",
+                "state": "VA"
+            }
+        ]
     }
 
     [ ] - Add another link on your homepage that when clicked takes you to a page that represents

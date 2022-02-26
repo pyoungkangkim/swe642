@@ -128,6 +128,36 @@
             document.getElementById('max').innerHTML =''
 
         }
+        function zipEventHandler() {
+            const zip = document.getElementById('form-zip').value
+            // create and make ajax requester
+            const xhr = new XMLHttpRequest();
+            const url = 'data.json';
+            xhr.open("GET", url, true);
+            // callback function after success
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    const zipJson = JSON.parse(this.responseText);
+                    let found = false;
+                    for (const zipcode of zipJson['zipcodes']) {
+                        if (zipcode['zip'] === zip) {
+                            found = true;
+                            document.getElementById('form-city').value = zipcode['city'];
+                            document.getElementById('form-state').value = zipcode['state'];
+                            break;
+                        }
+                    }
+                    if(!found) {
+                        document.getElementById('zip-label').innerHTML =
+                            'Zip &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                            '<span style="color: red">an invalid zip</span>'
+                    } else {
+                        document.getElementById('zip-label').innerHTML = 'Zip'
+                    }
+                }
+            }
+            xhr.send();
+        }
     </script>
 </head>
 
@@ -155,39 +185,40 @@
     <form id='form' class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm(); return false">
         <div class="w3-group">
             <input id="form-username" class="w3-input" type="text" style="width:100%"  placeholder="John" autofocus>
-            <label for="form-username" class="w3-label -field">User Name</label>
+            <label for="form-username" class="w3-label w3-field">User Name</label>
         </div>
         <div class="w3-group">
             <input id="form-street" class="w3-input" type="text" style="width:100%"  placeholder="12345 John Doe Street">
-            <label for="form-street" class="w3-label -field">Street Address</label>
+            <label for="form-street" class="w3-label w3-field">Street Address</label>
         </div>
         <div class="w3-third">
-            <input id="form-city" class="w3-input" type="text" style="width:87%"  placeholder="John Doe City">
-            <label for="form-city" class="w3-label -field">City</label>
+            <input id="form-city" class="w3-input" type="text" style="width:87%"  placeholder="Fairfax">
+            <label for="form-city" class="w3-label w3-field">City</label>
         </div>
         <div class="w3-third">
             <input id="form-state" class="w3-input" type="text" style="width:87%"  placeholder="VA">
-            <label for="form-state" class="w3-label -field">State</label>
+            <label for="form-state" class="w3-label w3-field">State</label>
         </div>
         <div class="w3-third">
-            <input id="form-zip" class="w3-input" type="text" style="width:100%"  placeholder="12345">
-            <label for="form-zip" class="w3-label -field">Zip</label>
+        <!--Register this event handler to handle the “onblur” event associated with the Zipcode element on the Survey Form.-->
+            <input id="form-zip" class="w3-input" type="text" style="width:100%"  placeholder="22030" onblur="zipEventHandler()">
+            <label for="form-zip" class="w3-label w3-field" id="zip-label">Zip</label>
         </div>
         <div class="w3-half">
             <input id="form-telephone" class="w3-input" type="text" style="width:90%"  placeholder="1-(123)-123-1234">
-            <label for="form-telephone" class="w3-label -field">Telephone Number</label>
+            <label for="form-telephone" class="w3-label w3-field">Telephone Number</label>
         </div>
         <div class="w3-half">
             <input id="form-email" class="w3-input" type="text" style="width:100%"  placeholder="myemail@email.com">
-            <label for="form-email" class="w3-label -field">E-mail</label>
+            <label for="form-email" class="w3-label w3-field">E-mail</label>
         </div>
         <div class="w3-half">
             <input id="form-url" class="w3-input" type="text" style="width:90%" placeholder="mypersonalurl.com">
-            <label for="form-url" class="w3-label -field">URL</label>
+            <label for="form-url" class="w3-label w3-field">URL</label>
         </div>
         <div class="w3-half">
             <input id="form-date" class="w3-input" type="text" style="width:100%"  placeholder="01/01/2000">
-            <label for="form-date" class="w3-label -field">Date of Survey</label>
+            <label for="form-date" class="w3-label w3-field">Date of Survey</label>
         </div>
         <br>
         <strong>Provide a checklist of what you liked most about the campus</strong>
@@ -303,7 +334,7 @@
         <p>&#09;- for example: John</p>
         <p><strong>2. </strong>The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.</p>
         <p>&#09;- street must be of form:    numeric([0-9]+)  alphanumerics(([a-zA-Z0-9]+)+) </p>
-        <p>&#09;- for example:  12345 somestreet</p>
+        <p>&#09;- for example:  22030 somestreet</p>
         <p>&#09;- city and state must be of form: alphabet([a-zA-Z]+)</p>
         <p>&#09;- zip must be of form: numeric([0-9]+)</p>
         <p><strong>3. </strong>Make sure at least two checkboxes are checked.</p>
