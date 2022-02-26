@@ -13,12 +13,13 @@
             window.location.reload(true);
         }
 
-        if (document.cookie) {
+        const username_regex = 'username=([^;]*)';
+        if (document.cookie && document.cookie.match(username_regex)) {
             // use a cookie to hold a user's information and display
             // a greeting with the user’s name from the cookie.
             const hour = new Date().getHours();
             const partOfDay = hour <= 12 ? 'Morning' : (hour < 18 ? 'Afternoon' : 'Evening');
-            const username = document.cookie.split('=')[1];
+            const username = document.cookie.match(username_regex)[1]
             alert("Good " + partOfDay + " " + username + ", welcome to SWE642 Survey");
             // If the name stored in the cookie is different from the user opening your page, have a
             // hyperlink that prompts the user to enter his/her name.
@@ -32,6 +33,8 @@
             const username = window.prompt('Please enter your name');
             // Set the cookie with the user entered name and an expiration time
             document.cookie = 'username=' + username + ';expires=' + oneDayFromNow.toUTCString();
+            document.writeln("<a href='javascript:reenterUsername()'><span style='color: red'>"
+                + "If you are not " + username + ", click here to re enter your username"  + ".</span></a>");
         }
 
         function avgmax() {

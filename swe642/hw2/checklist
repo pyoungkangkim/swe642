@@ -105,7 +105,7 @@
         ]
     }
 
-    [ ] - Add another link on your homepage that when clicked takes you to a page that represents
+    [x] - Add another link on your homepage that when clicked takes you to a page that represents
     a simplified version of https://volgenau.gmu.edu/ using jquery UI tabs. The idea is that
     when you when click a tab on the top of the page, it should swap the content of the page.
     You do not need to replicate entire Volgenau school’s site – just demonstrate the use of
