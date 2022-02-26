@@ -31,6 +31,7 @@
             // Set the cookie with the user entered name and an expiration time
             document.cookie = 'username=' + username + ';expires=' + oneDayFromNow.toUTCString();
         }
+
         function avgmax() {
             if(!document.getElementById('dataField')) {
                 return;
@@ -52,6 +53,7 @@
             document.getElementById('avg').innerHTML = avg;
             document.getElementById('max').innerHTML = max;
         }
+
         function validateForm() {
             const alphaNumericPattern = "^[a-zA-Z0-9]+$";
             const alphaPattern = "^[a-zA-Z]+$";
@@ -85,7 +87,7 @@
 
             // The Email address format should be valid.
             const email = document.getElementById('form-email').value;
-            const emailIsValid = email.match('^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[A-Z]+$');
+            const emailIsValid = email.match('^[a-zA-Z0-9-_.+%]+@[a-zA-Z0-9-.]+\.[a-zA-Z]+$');
 
             const clearInvalidField = (id, valid) => {
                 if (!valid && document.getElementById(id)) {
@@ -101,20 +103,28 @@
             clearInvalidField('form-zip', zipIsValid);
             clearInvalidField('form-email', emailIsValid);
 
-            // open jquery validation dialog
-            $("#error-msgs").dialog("open");
+            if (nameIsValid && streetIsValid && cityIsValid && stateIsValid && zipIsValid
+                && emailIsValid && likedIsValid && interestedReasonsIsValid) {
+                alert('Congradulations, your form was submitted successfully');
+                window.location.reload(true);
+            } else {
+                // open jquery validation dialog
+                $("#error-msgs").dialog("open");
+            }
         }
+
         // initialize consolidated error message of validation errors
         $(function () {
             $("#error-msgs").dialog({
-                maxWidth:600,
                 maxHeight: 500,
-                width: 600,
+                maxWidth:600,
                 height: 500,
+                width: 600,
                 modal: true,
                 autoOpen: false
             });
         });
+
         function clearForm() {
             const clearField = (id) => document.getElementById(id).value = '';
             strFields = ['form-username', 'form-street', 'form-city', 'form-state', 'form-zip', 'form-telephone', 'form-email',
@@ -126,8 +136,9 @@
             interestedReasons.forEach(interestedReason => interestedReason.checked = false);
             document.getElementById('avg').innerHTML =''
             document.getElementById('max').innerHTML =''
-
+            document.getElementById('zip-label').innerHTML = 'Zip<span style="color:red">*</span>';
         }
+
         function zipEventHandler() {
             const zip = document.getElementById('form-zip').value
             // create and make ajax requester
@@ -150,9 +161,9 @@
                     if(!found) {
                         document.getElementById('zip-label').innerHTML =
                             'Zip<span style="color:red">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                            '<span style="color: red">an invalid zip</span>'
+                            '<span style="color: red">an invalid zip</span>';
                     } else {
-                        document.getElementById('zip-label').innerHTML = 'Zip<span style="color:red">*</span>'
+                        document.getElementById('zip-label').innerHTML = 'Zip<span style="color:red">*</span>';
                     }
                 }
             }
