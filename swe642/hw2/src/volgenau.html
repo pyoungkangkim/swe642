@@ -1,0 +1,47 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>pkim23 swe642 HW2</title>
+    <link href="jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.13.1/jquery-ui.min.css"/>
+    <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="jquery-ui-1.13.1/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $( function() {
+            $("#tabs").tabs();
+        } );
+
+    </script>
+</head>
+
+<body>
+<div style="color: #006633; background-color: #006633; padding: 10px;">
+    <p style="color: white; font-size: 1.4em;">George Mason University</p>
+</div>
+<strong>Author: Pyoung Kang Kim</strong>
+
+<!--example inspired from https://jqueryui.com/tabs/-->
+<div id="tabs">
+    <ul>
+        <li><a href="intro_landing_page.html">Intro Landing Page</a></li>
+        <li><a href="#tabs-2">Tab 2 Demonstration</a></li>
+        <li><a href="#tabs-3">Tab 3 Demonstration</a></li>
+    </ul>
+
+    <div id="tabs-2">
+        <p>This is Tab 2 HTML content</p>
+    </div>
+    <div id="tabs-3">
+        <p>This is Tab 3 HTML content</p>
+    </div>
+</div>
+
+<!--Mason Logo(link) fixed on bottom right of page-->
+<!--logo from https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/George_Mason_University_logo.svg/1024px-George_Mason_University_logo.svg.png-->
+<a href="https://gmu.edu/">
+    <img id="main-logo" src="mason_logo.png" alt="GMU website" style="width: 280px; height: 160px;">
+</a>
+
+</body>
+</html>
