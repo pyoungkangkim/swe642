@@ -89,8 +89,7 @@
 
             const clearInvalidField = (id, valid) => {
                 if (!valid && document.getElementById(id)) {
-                    alert(id)
-                    document.getElementById(id).value = ''
+                    document.getElementById(id).value = '';
                 }
             }
 
@@ -116,16 +115,20 @@
                 autoOpen: false
             });
         });
-    </script>
-    <style>
-        .ui-widget-header,.ui-state-default, ui-button {
-            background:#b9cd6d;
-            border: 1px solid #b9cd6d;
-            color: #FFFFFF;
-            font-weight: bold;
-        }
-    </style>
+        function clearForm() {
+            const clearField = (id) => document.getElementById(id).value = '';
+            strFields = ['form-username', 'form-street', 'form-city', 'form-state', 'form-zip', 'form-telephone', 'form-email',
+                'form-date', 'form-url', 'form-date', 'month', 'form-recommended-school', 'form-comments', 'dataField'];
+            strFields.forEach(id => clearField(id));
+            const liked = Array.from(document.getElementsByName('liked'));
+            liked.forEach(like => like.checked = false);
+            const interestedReasons = Array.from(document.getElementsByName('interested-reason'));
+            interestedReasons.forEach(interestedReason => interestedReason.checked = false);
+            document.getElementById('avg').innerHTML =''
+            document.getElementById('max').innerHTML =''
 
+        }
+    </script>
 </head>
 
 <!--Header Section-->
@@ -139,10 +142,17 @@
 <!--Survey Section-->
 <section class="survey">
     <div class="w3-group">
-        <label class="required-field">required fields are marked </label>
-        <br><br>
+        <div class="w3-half">
+            <label class="required-field">required fields are marked </label>
+        </div>
+        <div class="w3-center">
+            <button id="opener" class="w3-button w3-white w3-border w3-border-green w3-round-large" onclick="clearForm()">
+                Reset Form
+            </button>
+        </div>
+        <br>
     </div>
-    <form class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm(); return false">
+    <form id='form' class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm(); return false">
         <div class="w3-group">
             <input id="form-username" class="w3-input" type="text" style="width:100%"  placeholder="John" autofocus>
             <label for="form-username" class="w3-label -field">User Name</label>
@@ -242,9 +252,9 @@
         </div>
         <br>
         <div class="w3-group">
-            <label for="browser">Please select your high school graduation month</label>
-            <input list="browsers" name="browser" id="browser">
-            <datalist id="browsers">
+            <label for="month">Please select your high school graduation month</label>
+            <input list="months" name="month" id="month">
+            <datalist id="months">
                 <option value="January">
                 <option value="February">
                 <option value="March">
@@ -261,14 +271,15 @@
         </div>
         <br>
         <label >Please select how likely you will recommend this school to prospective students</label>
-        <select name="recommend-school">
+        <select name="recommend-school" id="form-recommended-school">
+            <option value=""></option>
             <option value="Very Unlikely">Very Likely</option>
             <option value="Likely">Likely</option>
             <option value="Unlikely">Unlikely</option>
         </select>
         <br><br>
         <div class="w3-group">
-            <textarea class="w3-input" style="width:100%"></textarea>
+            <textarea class="w3-input" style="width:100%" id="form-comments"></textarea>
             <label class="w3-label">Additional comments</label>
         </div>
         <br>
@@ -276,8 +287,8 @@
             <p>Enter ten comma separated numbers ranging from 1 through 100</p>
             <p>Data Field<input id="dataField" onblur="avgmax()" style="width:100%"/>
                 <br/><br/>
-                <strong class="w3-half" style="font-size: 1.2em">Average:<span id="avg"></span></strong>
-                <strong class="w3-half" style="font-size: 1.2em">Maximum:<span id="max"></span></strong>
+                <strong class="w3-half" style="font-size: 1.2em" id="form-avg">Average:<span id="avg"></span></strong>
+                <strong class="w3-half" style="font-size: 1.2em" id="form-max">Maximum:<span id="max"></span></strong>
             </p>
         </div>
         <br>

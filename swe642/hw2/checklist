@@ -38,7 +38,7 @@
 
     [x] - Your validation warning errors should be implemented using jQuery UI modal window
     [x] - Only the fields with errors should be cleared on alert and not all fields.
-    [ ] - In addition, ensure that there is a Reset button on the form and when clicked, the Reset button clears the form contents.
+    [x] - In addition, ensure that there is a Reset button on the form and when clicked, the Reset button clears the form contents.
     [x] - The Name text box should contain only Alphabets.
     [x] - The Address text boxes should contain only appropriate numeric, alphabet or alphanumeric characters.
     [x] - Make sure at least two checkboxes are checked.
