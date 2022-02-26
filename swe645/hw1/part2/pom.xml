@@ -8,9 +8,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.swe645.pkim23</groupId>
-    <artifactId>part2</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>part2</name>
+    <artifactId>hw2</artifactId>
+    <version>version1</version>
+    <name>hw2</name>
     <packaging>war</packaging>
 
     <properties>
