@@ -21,8 +21,8 @@
             alert("Good " + partOfDay + " " + username + ", welcome to SWE642 Survey");
             // If the name stored in the cookie is different from the user opening your page, have a
             // hyperlink that prompts the user to enter his/her name.
-            document.writeln("<a href='javascript:reenterUsername()'>" + "If you are not " + username +
-                ", click here to re enter your username"  + ".</a>");
+            document.writeln("<a href='javascript:reenterUsername()'><span style='color: red'>"
+                + "If you are not " + username + ", click here to re enter your username"  + ".</span></a>");
         } else {
             // Set an expiration time for the cookie.
             const oneDayFromNow = new Date();
@@ -186,6 +186,8 @@
 </header>
 
 <body>
+<!--Make sure your last name is on every HTML page and programming artifacts so we know who it belongs to-->
+<strong>Author: Pyoung Kang Kim</strong>
 <!--Survey Section-->
 <section class="survey">
     <div class="w3-group">
