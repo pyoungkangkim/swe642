@@ -149,10 +149,10 @@
                     }
                     if(!found) {
                         document.getElementById('zip-label').innerHTML =
-                            'Zip &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                            'Zip<span style="color:red">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                             '<span style="color: red">an invalid zip</span>'
                     } else {
-                        document.getElementById('zip-label').innerHTML = 'Zip'
+                        document.getElementById('zip-label').innerHTML = 'Zip<span style="color:red">*</span>'
                     }
                 }
             }
@@ -184,41 +184,41 @@
     </div>
     <form id='form' class="w3-container w3-card-8" autocomplete="on" onsubmit="validateForm(); return false">
         <div class="w3-group">
-            <input id="form-username" class="w3-input" type="text" style="width:100%"  placeholder="John" autofocus>
-            <label for="form-username" class="w3-label w3-field">User Name</label>
+            <input id="form-username" class="w3-input" type="text" style="width:100%" required placeholder="John" autofocus>
+            <label for="form-username" class="w3-label required-field">User Name</label>
         </div>
         <div class="w3-group">
-            <input id="form-street" class="w3-input" type="text" style="width:100%"  placeholder="12345 John Doe Street">
-            <label for="form-street" class="w3-label w3-field">Street Address</label>
+            <input id="form-street" class="w3-input" type="text" style="width:100%" required placeholder="12345 John Doe Street">
+            <label for="form-street" class="w3-label required-field">Street Address</label>
         </div>
         <div class="w3-third">
-            <input id="form-city" class="w3-input" type="text" style="width:87%"  placeholder="Fairfax">
-            <label for="form-city" class="w3-label w3-field">City</label>
+            <input id="form-city" class="w3-input" type="text" style="width:87%" required placeholder="Fairfax">
+            <label for="form-city" class="w3-label required-field">City</label>
         </div>
         <div class="w3-third">
-            <input id="form-state" class="w3-input" type="text" style="width:87%"  placeholder="VA">
-            <label for="form-state" class="w3-label w3-field">State</label>
+            <input id="form-state" class="w3-input" type="text" style="width:87%" required placeholder="VA">
+            <label for="form-state" class="w3-label required-field">State</label>
         </div>
         <div class="w3-third">
         <!--Register this event handler to handle the “onblur” event associated with the Zipcode element on the Survey Form.-->
-            <input id="form-zip" class="w3-input" type="text" style="width:100%"  placeholder="22030" onblur="zipEventHandler()">
-            <label for="form-zip" class="w3-label w3-field" id="zip-label">Zip</label>
+            <input id="form-zip" class="w3-input" type="text" style="width:100%" required placeholder="22030" onblur="zipEventHandler()">
+            <label for="form-zip" class="w3-label" id="zip-label">Zip<span style="color: red">*</span></label>
         </div>
         <div class="w3-half">
-            <input id="form-telephone" class="w3-input" type="text" style="width:90%"  placeholder="1-(123)-123-1234">
-            <label for="form-telephone" class="w3-label w3-field">Telephone Number</label>
+            <input id="form-telephone" class="w3-input" type="text" style="width:90%" required placeholder="1-(123)-123-1234">
+            <label for="form-telephone" class="w3-label required-field">Telephone Number</label>
         </div>
         <div class="w3-half">
-            <input id="form-email" class="w3-input" type="text" style="width:100%"  placeholder="myemail@email.com">
-            <label for="form-email" class="w3-label w3-field">E-mail</label>
+            <input id="form-email" class="w3-input" type="text" style="width:100%" required placeholder="myemail@email.com">
+            <label for="form-email" class="w3-label required-field">E-mail</label>
         </div>
         <div class="w3-half">
-            <input id="form-url" class="w3-input" type="text" style="width:90%" placeholder="mypersonalurl.com">
-            <label for="form-url" class="w3-label w3-field">URL</label>
+            <input id="form-url" class="w3-input" type="text" style="width:90%" required placeholder="mypersonalurl.com">
+            <label for="form-url" class="w3-label required-field">URL</label>
         </div>
         <div class="w3-half">
-            <input id="form-date" class="w3-input" type="text" style="width:100%"  placeholder="01/01/2000">
-            <label for="form-date" class="w3-label w3-field">Date of Survey</label>
+            <input id="form-date" class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000">
+            <label for="form-date" class="w3-label required-field">Date of Survey</label>
         </div>
         <br>
         <strong>Provide a checklist of what you liked most about the campus</strong>
