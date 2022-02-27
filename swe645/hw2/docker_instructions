@@ -9,18 +9,18 @@
     -# and then append (or prepend) ~/.local/bin to $PATH
 
 - AWS CLI -https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
 - Aws IAM authenticator -https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html
     -curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator
     -chmod +x ./aws-iam-authenticator
-    -mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
-    -echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+    -mkdir .is
+    -cp ./aws-iam-authenticator $HOME/.aws-iam-authenticator
+    -echo 'export PATH=$PATH:$HOME/.is' >> ~/.bashrc
     -aws-iam-authenticator help
 
 - eksctl -https://github.com/weaveworks/eksctl
     -curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
     -sudo mv /tmp/eksctl /usr/local/bin
-
-
 
 
 # dockerhub
@@ -55,6 +55,31 @@ cat ecr_pass.txt | docker login -u AWS --password-stdin 800617640166.dkr.ecr.us-
 
 docker tag hw2:latest 800617640166.dkr.ecr.us-east-1.amazonaws.com/hw2:latest
 docker push 800617640166.dkr.ecr.us-east-1.amazonaws.com/hw2:latest
+
+inspired from https://www.bluematador.com/blog/my-first-kubernetes-cluster-a-review-of-amazon-eks
+
+
+https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-01-09/amazon-eks-vpc-sample.yaml
+
+## Create our cluster on EKS
+eksctl create cluster -f cluster.yaml
+
+## Create our deployment
+kubectl apply -f deployment.yaml
+
+## Create service
+kubectl apply -f service.yaml
+
+## service created
+kubectl get services
+
+##  pods of our application are running.
+kubectl get pods -o wide
+
+## get nodes command
+kubectl get nodes -o wide
+
+
 
 
 

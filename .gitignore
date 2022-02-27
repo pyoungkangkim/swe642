@@ -6,3 +6,5 @@ src/main/resources/public
 target
 *.env
 !.sample.env
+ecr_pass.txt
+new_user_credentials.csv
