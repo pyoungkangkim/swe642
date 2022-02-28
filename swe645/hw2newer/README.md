@@ -92,6 +92,18 @@
    - ```kubectl get pods -o wide``` 
    - ```kubectl get nodes -o wide```
 
+## Create LB service for external communication
+
+1. run ```kubectl apply -f hw2-lb-service.yaml```
+2. run below and record the external-ip of the service/hw2-lb
+   - ```kubectl get all```
+3. curl the <external-ip-link>/hw2-version1/survey_page.html
+   - for example http://ade3d3fbcbc11427e95e402c07f57bce-1621615609.us-east-1.elb.amazonaws.com/hw2-version1/survey_page.html
+
+
+http://ade3d3fbcbc11427e95e402c07f57bce-1621615609.us-east-1.elb.amazonaws.com/hw2-version1/survey_page.html
+
+
 
 kubectl expose deployment hw2-deployment --type=LoadBalancer --name=my-service
 
