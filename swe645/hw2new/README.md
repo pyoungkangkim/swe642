@@ -101,10 +101,20 @@
       - select desired size 1 nodes
    - select default networking
     
-## Build docker image and upload to ECR
+## Build docker image and upload to dockerhub
 
-1. 
+1. Set up dockerhub repository
+   - create a dockerhub account with some <your_username>
+   - create a dockerhub repository, name it <some_repo_name>
 
+1. Build the docker image
+   - ```docker login --username=<your_username>```
+   - cd into the directory with Dockerfile and hw2-version1.war
+   - ```docker build -t hw2 .```
+   - ```docker push <your_username>/<some_repo_name>```
+
+
+## 
 
 
 
