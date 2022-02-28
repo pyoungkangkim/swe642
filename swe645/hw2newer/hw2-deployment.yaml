@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw2-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hw2
+  template:
+    metadata:
+      labels:
+        app: hw2
+    spec:
+      containers:
+        - name: hw2-container
+          image: 800617640166.dkr.ecr.us-east-1.amazonaws.com/hw2:latest
+          ports:
+            - containerPort: 8080

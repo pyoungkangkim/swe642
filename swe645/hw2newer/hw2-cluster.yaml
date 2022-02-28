@@ -1,0 +1,15 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: hw2-cluster
+  region: us-east-1
+
+nodeGroups:
+  - name: ng-workers
+    labels: {
+      role: workers
+    }
+    instanceType: t3.small
+    desiredCapacity: 1
+    privateNetworking: true
