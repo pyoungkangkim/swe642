@@ -85,13 +85,6 @@
 1. run ```kubectl apply -f hw2-deployment.yaml```
 2. check to see if it's up ```kubectl get deployments```
 
-## Create NodePort service for communication through ports
-
-1. run ```kubectl apply -f hw2-np-service.yaml```
-2. run below and record the public ip addresses
-   - ```kubectl get pods -o wide``` 
-   - ```kubectl get nodes -o wide```
-
 ## Create LB service for external communication
 
 1. run ```kubectl apply -f hw2-lb-service.yaml```
@@ -101,21 +94,11 @@
    - for example http://ade3d3fbcbc11427e95e402c07f57bce-1621615609.us-east-1.elb.amazonaws.com/hw2-version1/survey_page.html
 
 
-http://ade3d3fbcbc11427e95e402c07f57bce-1621615609.us-east-1.elb.amazonaws.com/hw2-version1/survey_page.html
+## Finally, cleanup
+1. ```kubectl delete svc service/hw2-lb```
+2. ```eksctl delete cluster --name hw2-cluster```
 
 
-
-kubectl expose deployment hw2-deployment --type=LoadBalancer --name=my-service
-
-List all services running in your cluster.
-
-kubectl get svc --all-namespaces
-Delete any services that have an associated EXTERNAL-IP value. These services are fronted by an Elastic Load Balancing load balancer, and you must delete them in Kubernetes to allow the load balancer and associated resources to be properly released.
-
-kubectl delete svc <service-name>
-Delete the cluster and its associated nodes with the following command, replacing <prod> with your cluster name.
-
-eksctl delete cluster --name hw2-cluster
 
 
 
