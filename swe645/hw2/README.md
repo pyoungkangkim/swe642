@@ -95,8 +95,12 @@
 
 
 ## Finally, cleanup
-1. ```kubectl delete svc service/hw2-lb```
+1. ```kubectl delete service/hw2-lb```
 2. ```eksctl delete cluster --name hw2-cluster```
+
+
+## Video Link below
+
 
 
 
