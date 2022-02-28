@@ -1,14 +1,23 @@
 # First install these
 - docker -https://docs.docker.com/get-docker/
-- Kubectl
-    -curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
-    -sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-    -chmod +x kubectl
-    -mkdir -p ~/.local/bin/kubectl
-    -mv ./kubectl ~/.local/bin/kubectl
-    -# and then append (or prepend) ~/.local/bin to $PATH
 
-- AWS CLI -https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+- Kubectl installation from https://www.coachdevops.com/2020/10/install-kubectl-on-ubuntu-instance-how.html
+    -curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    -sudo touch /etc/apt/sources.list.d/kubernetes.list
+    -echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+    -sudo apt-get update
+    -sudo apt-get install -y kubectl
+
+- AWS CLI
+    -https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+        -curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        -unzip awscliv2.zip
+        -sudo ./aws/install
+        -unzip awscliv2.zip
+        -sudo ./aws/install
+        -./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+
+    -https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
 - Aws IAM authenticator -https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html
     -curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator
@@ -35,18 +44,6 @@ docker push pkim23gmu/hw2
 docker run -p 8080:8080 pkim23gmu/hw2
 
 # log into aws console and create a user with administrator access and download the new_user_credentials.csv
-
-mkdir ~/.aws
-cd ~/.aws
-create a file called credentials looking like this - fill in from new_user_credentials.csv
-[default]
-aws_access_key_id = your-key-id
-aws_secret_access_key your-secret-access-key
-
-create another file called config
-[default]
-region = us-east-1
-output = json
 
 aws ecr create-repository --repository-name hw2 --region us-east-1
 aws ecr get-login-password --region us-east-1 > ecr_pass.txt
@@ -79,6 +76,8 @@ kubectl get pods -o wide
 ## get nodes command
 kubectl get nodes -o wide
 
+
+kubectl delete all --all
 
 
 
