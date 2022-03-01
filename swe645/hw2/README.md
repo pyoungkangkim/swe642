@@ -22,7 +22,7 @@
     - ```sudo apt-get install -y kubectl```
 
 3. AWS CLI
-    - first create an account for AWS
+    - first create an account for AWS and a user
     - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
         - ```curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"```
         - ```unzip awscliv2.zip```
@@ -63,7 +63,7 @@
 0. Create a user <your_username> for EKS
    - grant AdministratorAccess role
     
-1. run ```eksctl create cluster -f hw2cluster.yaml```
+1. run ```eksctl create cluster -f hw2-cluster.yaml```
    - check if the cluster is up ```kubectl get svc```
    - check namespaces ```kubectl get pods --all-namespaces -o wide```
     
@@ -101,7 +101,7 @@
 
 ## Video Link below
 
-
+- https://www.youtube.com/watch?v=h0CPV2uaTsU
 
 
 
