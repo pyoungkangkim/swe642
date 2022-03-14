@@ -1,3 +1,7 @@
+# Author: Pyoung Kang Kim
+# This is the service yaml file that defines the loadbalancer for my hw2 app
+
+
 apiVersion: v1
 kind: Service
 metadata:

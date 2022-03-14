@@ -1,3 +1,8 @@
+# Author: Pyoung Kang Kim
+# This is the deployment yaml file that defines the name of the deployment
+# and the replica set which runs 3 replicas of the pod defined in the template,
+# which internally uses the hw2-container from the image built from Dockerfile that I published to ECR
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:

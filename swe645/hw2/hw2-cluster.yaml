@@ -1,3 +1,6 @@
+# Author: Pyoung Kang Kim
+# This is the EKS cluster yaml file that defines the name, region and nodegroups
+
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
