@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 
 @Component({
@@ -7,27 +7,37 @@ import {FormBuilder} from "@angular/forms";
   styleUrls: ['./survey.component.css']
 })
 export class SurveyComponent implements OnInit {
-  //
-  // constructor() { }
-  //
-  // ngOnInit(): void {
-  // }
-
-  // constructor() { }
-
   ngOnInit(): void {
   }
 
-  title = 'Register for stuff';
+  title = '';
   formGroup;
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) {
+  constructor(private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({
-      name: '',
+      firstname: '',
+      lastname: '',
+      street: '',
+      city: '',
+      state: '',
+      zip: '',
+      phone: '',
       email: '',
-      terms: false
+      date: '',
+      // mostliked
+      student: '',
+      atmosphere: '',
+      location: '',
+      dorm: '',
+      campus: '',
+      sport: '',
+      interest: '',
+      // radio
+      interestedreason: '',
+      // select
+      recommend: '',
+      raffle: '',
+      comment: ''
     });
   }
 

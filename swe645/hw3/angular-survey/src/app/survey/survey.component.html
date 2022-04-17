@@ -20,27 +20,27 @@
     {{title}}
   </h1>
 
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
-    <div class="form-group">
-      <label for="name">Full name</label>
-      <input type="text" class="form-control" id="name"
-             placeholder="Enter full name" formControlName="name" />
-    </div>
+<!--  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">-->
+<!--    <div class="form-group">-->
+<!--      <label for="name">Full name</label>-->
+<!--      <input type="text" class="form-control" id="name"-->
+<!--             placeholder="Enter full name" formControlName="name" />-->
+<!--    </div>-->
 
-    <div class="form-group">
-      <label for="name">Email address</label>
-      <input type="email" class="form-control" id="email"
-             placeholder="Enter email" formControlName="email" />
-    </div>
+<!--    <div class="form-group">-->
+<!--      <label for="name">Email address</label>-->
+<!--      <input type="email" class="form-control" id="email"-->
+<!--             placeholder="Enter email" formControlName="email" />-->
+<!--    </div>-->
 
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input"
-             id="terms" formControlName="terms" />
-      <label class="form-check-label" for="terms">Agree to terms and conditions?</label>
-    </div>
+<!--    <div class="form-group form-check">-->
+<!--      <input type="checkbox" class="form-check-input"-->
+<!--             id="terms" formControlName="terms" />-->
+<!--      <label class="form-check-label" for="terms">Agree to terms and conditions?</label>-->
+<!--    </div>-->
 
-    <button class="btn btn-primary" type="submit">Submit Form</button>
-  </form>
+<!--    <button class="btn btn-primary" type="submit">Submit Form</button>-->
+<!--  </form>-->
 </div>
 
 <section class="survey">
@@ -48,41 +48,42 @@
     <label class="required-field">required fields are marked </label>
     <br><br>
   </div>
-  <form class="w3-container w3-card-8" autocomplete="on">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="w3-container w3-card-8" autocomplete="on">
+<!--  <form class="w3-container w3-card-8" autocomplete="on">-->
     <div class="w3-half">
-      <input id="form-firstname" class="w3-input" type="text" style="width:90%" required placeholder="John">
+      <input id="form-firstname" class="w3-input" type="text" style="width:90%" required placeholder="John" formControlName="firstname">
       <label for="form-firstname" class="w3-label required-field">First Name</label>
     </div>
     <div class="w3-half">
-      <input id="form-lastname" class="w3-input" type="text" style="width:100%" required placeholder="Doe">
+      <input id="form-lastname" class="w3-input" type="text" style="width:100%" required placeholder="Doe" formControlName="lastname">
       <label for="form-lastname" class="w3-label required-field">Last Name</label>
     </div>
     <div class="w3-half">
-      <input id="form-street" class="w3-input" type="text" style="width:90%" required placeholder="12345 John Doe Street">
+      <input id="form-street" class="w3-input" type="text" style="width:90%" required placeholder="12345 John Doe Street" formControlName="street">
       <label for="form-street" class="w3-label required-field">Street Address</label>
     </div>
     <div class="w3-half">
-      <input id="form-city" class="w3-input" type="text" style="width:100%" required placeholder="John Doe City">
+      <input id="form-city" class="w3-input" type="text" style="width:100%" required placeholder="John Doe City" formControlName="city">
       <label for="form-city" class="w3-label required-field">City</label>
     </div>
     <div class="w3-third">
-      <input id="form-state" class="w3-input" type="text" style="width:87%" required placeholder="VA">
+      <input id="form-state" class="w3-input" type="text" style="width:87%" required placeholder="VA" formControlName="state">
       <label for="form-state" class="w3-label required-field">State</label>
     </div>
     <div class="w3-third">
-      <input id="form-zip" class="w3-input" type="text" style="width:90%" required placeholder="12345">
+      <input id="form-zip" class="w3-input" type="text" style="width:90%" required placeholder="12345" formControlName="zip">
       <label for="form-zip" class="w3-label required-field">Zip</label>
     </div>
     <div class="w3-third">
-      <input id="form-telephone" class="w3-input" type="text" style="width:100%" required placeholder="1-(123)-123-1234">
+      <input id="form-telephone" class="w3-input" type="text" style="width:100%" required placeholder="1-(123)-123-1234" formControlName="phone">
       <label for="form-telephone" class="w3-label required-field">Telephone Number</label>
     </div>
     <div class="w3-half">
-      <input id="form-email" class="w3-input" type="text" style="width:90%" required placeholder="myemail@email.com">
+      <input id="form-email" class="w3-input" type="text" style="width:90%" required placeholder="myemail@email.com" formControlName="email">
       <label for="form-email" class="w3-label required-field">E-mail</label>
     </div>
     <div class="w3-half">
-      <input id="form-date" class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000">
+      <input id="form-date" class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000" formControlName="date">
       <label for="form-date" class="w3-label required-field">Date of Survey</label>
     </div>
     <br>
@@ -92,29 +93,29 @@
     <div class="w3-row">
       <div class="w3-half">
         <label class="w3-checkbox">
-          <input type="checkbox"> Students
+          <input type="checkbox" formControlName="student"> Students
           <div class="w3-checkmark"></div>
         </label>
         <label class="w3-checkbox">
-          <input type="checkbox"> Location
+          <input type="checkbox" formControlName="location"> Location
           <div class="w3-checkmark"></div>
         </label>
         <label class="w3-checkbox">
-          <input type="checkbox"> Campus
+          <input type="checkbox" formControlName="campus"> Campus
           <div class="w3-checkmark"></div>
         </label>
       </div>
       <div class="w3-half">
         <label class="w3-checkbox">
-          <input type="checkbox"> Atmosphere
+          <input type="checkbox" formControlName="atmosphere"> Atmosphere
           <div class="w3-checkmark"></div>
         </label>
         <label class="w3-checkbox">
-          <input type="checkbox"> Dorm Rooms
+          <input type="checkbox" formControlName="dorm"> Dorm Rooms
           <div class="w3-checkmark"></div>
         </label>
         <label class="w3-checkbox">
-          <input type="checkbox"> Sports
+          <input type="checkbox" formControlName="sport"> Sports
           <div class="w3-checkmark"></div>
         </label>
         <br>
@@ -126,21 +127,21 @@
     <div class="w3-row">
       <div class="w3-half">
         <label class="w3-checkbox">
-          <input type="radio" name="interested-reason" value="no"> Friends
+          <input type="radio" name="interestedreason" value="Friends" formControlName="interestedreason"> Friends
           <div class="w3-checkmark"></div>
         </label>
         <label class="w3-checkbox">
-          <input type="radio" name="interested-reason" value="no"> Television
+          <input type="radio" name="interestedreason" value="Television" formControlName="interestedreason"> Television
           <div class="w3-checkmark"></div>
         </label>
       </div>
       <div class="w3-half">
         <label class="w3-checkbox">
-          <input type="radio" name="interested-reason" value="no"> Internet
+          <input type="radio" name="interestedreason" value="Internet" formControlName="interestedreason"> Internet
           <div class="w3-checkmark"></div>
         </label>
         <label class="w3-checkbox">
-          <input type="radio" name="interested-reason" value="no"> Other
+          <input type="radio" name="interestedreason" value="Other" formControlName="interestedreason"> Other
           <div class="w3-checkmark"></div>
         </label>
         <br>
@@ -148,14 +149,14 @@
     </div>
     <br>
     <label >Please select how likely you will recommend this school to prospective students</label>
-    <select name="recommend-school">
+    <select name="recommend-school" formControlName="recommend">
       <option value="Very Unlikely">Very Likely</option>
       <option value="Likely">Likely</option>
       <option value="Unlikely">Unlikely</option>
     </select>
     <br><br>
     <div class="w3-group">
-            <textarea class="w3-input" style="width:100%"
+            <textarea class="w3-input" style="width:100%" formControlName="raffle"
                       placeholder="Please enter below, at least ten comma separated numbers ranging from 1 through 100 in the Raffle field"></textarea>
       <label class="w3-label">Raffle
         (this information will be used to announce whether the student wins a free movie ticket)
@@ -163,7 +164,7 @@
     </div>
     <br>
     <div class="w3-group">
-      <textarea class="w3-input" style="width:100%"></textarea>
+      <textarea class="w3-input" style="width:100%" formControlName="comment"></textarea>
       <label class="w3-label">Additional comments</label>
     </div>
     <br>
