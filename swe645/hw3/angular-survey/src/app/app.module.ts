@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AllSurveysComponent } from './all-surveys/all-surveys.component';
 import { SurveyComponent } from './survey/survey.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
