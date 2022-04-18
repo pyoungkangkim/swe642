@@ -35,9 +35,7 @@ export class SurveyComponent implements OnInit {
       // radio
       interestedreason: '',
       // select
-      recommend: '',
-      raffle: '',
-      comment: ''
+      recommend: ''
     });
   }
 
