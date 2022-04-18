@@ -41,10 +41,10 @@ export class SurveyComponent implements OnInit {
   }
 
   onSubmit(formData) {
-    console.log(formData)
-    var name = formData['name'];
-    // this.http.post<any>('https://reqres.in/api/posts', { title: 'Angular POST Request Example' })
-    //   .subscribe(data => console.log(data))
-    this.http.get<any>('http://localhost:8000').subscribe(data => console.log(data))
+    let body = JSON.stringify(formData);
+    const options = {headers: {'Content-Type': 'application/json'}};
+    this.http.post<any>('http://localhost:8080/api/survey', body, options)
+      .subscribe(data => console.log(data))
+    // this.http.get<any>('http://localhost:8080/api/survey').subscribe(data => console.log(data))
   }
 }

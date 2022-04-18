@@ -8,18 +8,20 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
-@RequestMapping(value = "/survey")
+@RequestMapping(value = "/api/survey")
 @RequiredArgsConstructor
 public class SurveyController {
     private final SurveyService surveyService;
 
-    @PostMapping(value = "submit",
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @GetMapping
+    public String hi() {
+        return "hi";
+    }
+
+    @PostMapping
     public ResponseEntity submitForm(@RequestBody Survey survey) {
+        System.out.println(survey);
         surveyService.saveSurvey(survey);
         return ResponseEntity.ok(HttpStatus.OK);
     }
