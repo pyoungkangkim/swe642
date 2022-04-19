@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="surveys")
+@Table(name="survey")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

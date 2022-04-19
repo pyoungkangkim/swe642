@@ -13,6 +13,6 @@ public class SurveyService {
     }
 
     public void saveSurvey(Survey survey) {
-
+        this.surveyRepo.save(survey);
     }
 }
