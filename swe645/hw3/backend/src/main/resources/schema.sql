@@ -17,7 +17,6 @@ CREATE TABLE survey
     dorm             varchar(256),
     campus           varchar(256),
     sport            varchar(256),
-    interest         varchar(256),
     interestedreason varchar(256),
     recommend        varchar(256),
     PRIMARY KEY (id)

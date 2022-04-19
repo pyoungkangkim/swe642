@@ -15,12 +15,44 @@
 
 <body>
 <!--All Survey Section-->
-<div *ngFor="let survey of surveys">
-  <div><p>wtf</p></div>
-  <div>{{survey.id}}</div>
-  <div>{{survey.firstname}} {{survey.lastname}}</div>
-  <div>{{survey.email}}</div>
-</div>
+<section class="survey">
+  <div *ngFor="let survey of surveys">
+    <div><strong style="font-size: 20px">Survey {{survey.id}}</strong></div>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Number</th>
+        <th>Email</th>
+        <th>Date of Survey</th>
+      </tr>
+      <tr>
+        <td>{{survey.firstname}} {{survey.lastname}}</td>
+        <td>{{survey.street}} {{survey.city}} {{survey.state}} {{survey.zip}}</td>
+        <td>{{survey.phone}}</td>
+        <td>{{survey.email}}</td>
+        <td>{{survey.date}}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Number</th>
+        <th>Email</th>
+        <th>Date of Survey</th>
+      </tr>
+      <tr>
+        <td>{{survey.firstname}} {{survey.lastname}}</td>
+        <td>{{survey.street}} {{survey.city}} {{survey.state}} {{survey.zip}}</td>
+        <td>{{survey.phone}}</td>
+        <td>{{survey.email}}</td>
+        <td>{{survey.date}}</td>
+      </tr>
+    </table>
+    <br><br><br>
+  </div>
+</section>
 
 <!--Footer-->
 <footer class="footer">

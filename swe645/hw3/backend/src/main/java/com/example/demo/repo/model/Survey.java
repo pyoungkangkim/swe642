@@ -24,10 +24,10 @@ public class Survey {
     private int id;
 
     @Column(name = "firstname")
-    private String firstName;
+    private String firstname;
 
     @Column(name = "lastname")
-    private String lastName;
+    private String lastname;
 
     @Column(name = "street")
     private String street;
@@ -69,7 +69,7 @@ public class Survey {
     private String sport;
 
     @Column(name = "interestedreason")
-    private String interestedReason;
+    private String interestedreason;
 
     @Column(name = "recommend")
     private String recommend;
