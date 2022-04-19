@@ -14,6 +14,7 @@
 </header>
 
 <body>
+<strong>Author: Pyoung Kang Kim</strong>
 <!--All Survey Section-->
 <section class="survey">
   <div *ngFor="let survey of surveys">
@@ -56,7 +57,7 @@
     <table>
       <tr>
         <th>Interest Reason</th>
-        <th>Would the student recommend?</th>
+        <th>Would the student recommend GMU?</th>
       </tr>
       <tr>
         <td>{{survey.interestedreason}}</td>
@@ -71,8 +72,8 @@
 <footer class="footer">
   <p style="font-size: 25px; color: #006633;">Additional Links</p>
   <ul class="footer-links w3-container">
-    <li class="w3-ul"><a href="https://cs.gmu.edu">CS GMU</a></li>
-    <li class="w3-ul"><a [routerLink]="['/allSurveys']">CS SURVEY</a></li>
+    <li class="w3-ul"><a [routerLink]="['/survey']">CS SURVEY</a></li>
+    <li class="w3-ul"><a [routerLink]="['/allSurveys']">ALL SURVEYS</a></li>
     <li class="w3-ul"><a href="https://catalog.gmu.edu/colleges-schools/engineering/computer-science/">MS CS</a>
     </li>
   </ul>
