@@ -1,5 +1,4 @@
-drop table if exists survey;
-CREATE TABLE survey
+CREATE TABLE if not exists survey
 (
     id               MEDIUMINT NOT NULL AUTO_INCREMENT,
     firstname        varchar(256),
