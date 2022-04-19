@@ -32,7 +32,6 @@ export class SurveyComponent implements OnInit {
       dorm: '',
       campus: '',
       sport: '',
-      interest: '',
       // radio
       interestedreason: '',
       // select

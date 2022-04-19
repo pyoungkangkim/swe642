@@ -34,20 +34,33 @@
         <td>{{survey.date}}</td>
       </tr>
     </table>
+    <div><strong style="font-size: 15px"> Things that {{survey.firstname}} {{survey.lastname}} likes True/False </strong></div>
     <table>
       <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Number</th>
-        <th>Email</th>
-        <th>Date of Survey</th>
+        <th>Students</th>
+        <th>Atmosphere</th>
+        <th>Location</th>
+        <th>Dorm</th>
+        <th>Campus</th>
+        <th>Sports</th>
       </tr>
       <tr>
-        <td>{{survey.firstname}} {{survey.lastname}}</td>
-        <td>{{survey.street}} {{survey.city}} {{survey.state}} {{survey.zip}}</td>
-        <td>{{survey.phone}}</td>
-        <td>{{survey.email}}</td>
-        <td>{{survey.date}}</td>
+        <td>{{survey.student}}</td>
+        <td>{{survey.atmosphere}}</td>
+        <td>{{survey.location}}</td>
+        <td>{{survey.dorm}}</td>
+        <td>{{survey.campus}}</td>
+        <td>{{survey.sport}}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>Interest Reason</th>
+        <th>Would the student recommend?</th>
+      </tr>
+      <tr>
+        <td>{{survey.interestedreason}}</td>
+        <td>{{survey.recommend}}</td>
       </tr>
     </table>
     <br><br><br>
