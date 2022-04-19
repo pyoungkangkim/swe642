@@ -1,0 +1,25 @@
+# Author: Pyoung Kang Kim
+# This is the deployment yaml file that defines the name of the deployment
+# and the replica set which runs 3 replicas of the pod defined in the template,
+# which internally uses the hw2-container from the image built from Dockerfile that I published to ECR
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw3-backend-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hw3-backend
+  template:
+    metadata:
+      labels:
+        app: hw3-backend
+    spec:
+      containers:
+        - name: hw3-container
+          image: 800617640166.dkr.ecr.us-east-1.amazonaws.com/hw3-backend:latest
+          ports:
+            - containerPort: 8080

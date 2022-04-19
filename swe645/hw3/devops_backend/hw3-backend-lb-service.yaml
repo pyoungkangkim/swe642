@@ -1,0 +1,17 @@
+# Author: Pyoung Kang Kim
+# This is the service yaml file that defines the loadbalancer for my hw2 app
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hw3-backend-lb
+  labels:
+    app: hw3-backend-lb
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: hw3
+  type: LoadBalancer

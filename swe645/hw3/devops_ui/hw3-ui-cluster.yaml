@@ -1,0 +1,18 @@
+# Author: Pyoung Kang Kim
+# This is the EKS cluster yaml file that defines the name, region and nodegroups
+
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: hw3-ui-cluster
+  region: us-east-1
+
+nodeGroups:
+  - name: ng-workers
+    labels: {
+      role: workers
+    }
+    instanceType: t3.small
+    desiredCapacity: 1
+    privateNetworking: true
