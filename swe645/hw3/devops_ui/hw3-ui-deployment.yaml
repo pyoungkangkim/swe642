@@ -9,7 +9,7 @@ metadata:
   name: hw3-ui-deployment
   namespace: default
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hw3-ui
@@ -22,4 +22,4 @@ spec:
         - name: hw3-ui-container
           image: 800617640166.dkr.ecr.us-east-1.amazonaws.com/hw3-ui:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 4200
