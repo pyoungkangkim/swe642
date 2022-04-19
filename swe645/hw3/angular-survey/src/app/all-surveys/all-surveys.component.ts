@@ -14,7 +14,7 @@ export class AllSurveysComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8080/api/survey')
+    this.http.get<any>('http://a47bf37c0a70f4a5eba390eea8c3675b-1557363398.us-east-1.elb.amazonaws.com/api/survey')
       .subscribe(response => response.forEach(data => this.surveys.push(data)))
     console.log(this.surveys)
   }
