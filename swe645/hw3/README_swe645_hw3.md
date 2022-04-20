@@ -176,36 +176,11 @@
 
 - http://pkim23-swe645-public.s3-website-us-east-1.amazonaws.com/
 
+## As required from the submission, although not live, but shown in the video
+### frontend
+- http://a24d775d4e7ca402c8a2880e1b1032e7-319553540.us-east-1.elb.amazonaws.com/
+- http://a24d775d4e7ca402c8a2880e1b1032e7-319553540.us-east-1.elb.amazonaws.com/allSurveys
+- http://a24d775d4e7ca402c8a2880e1b1032e7-319553540.us-east-1.elb.amazonaws.com/survey
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### backend
+- http://a47bf37c0a70f4a5eba390eea8c3675b-1557363398.us-east-1.elb.amazonaws.com/api/survey

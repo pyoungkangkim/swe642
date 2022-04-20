@@ -47,12 +47,10 @@
 
 - http://pkim23-swe645-public.s3-website-us-east-1.amazonaws.com/
 
+## For the full fleged deployment with EKS and docker on AWS version 
 
-
-
-
-
-
+- https://github.com/pyoungkangkim/swe/blob/main/README_swe645_hw3.md
+- https://www.youtube.com/watch?v=dkLlDG8vmhA
 
 
 
