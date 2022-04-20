@@ -168,8 +168,7 @@
 4. ```eksctl delete cluster --name hw3-backend-cluster```
 
 
-## Video Link below
-
+## Video Link below for this assignment
 
 - https://www.youtube.com/watch?v=dkLlDG8vmhA
 
