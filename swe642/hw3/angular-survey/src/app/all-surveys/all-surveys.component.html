@@ -1,0 +1,91 @@
+<!--name: Pyoung Kang Kim-->
+<!--description: the survey page for part 1 of the homework-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>pkim23 swe642 HW1</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<!--Header Section-->
+<header class="header">
+  <div id="header-rectangle" style="width: 800px; padding: 20px 12px 12px 12px;" class="w3-container">
+    <h1 class="welcome-bottom">GMU All Surveys</h1>
+  </div>
+</header>
+
+<body>
+<strong>Author: Pyoung Kang Kim</strong>
+<!--All Survey Section-->
+<section class="survey">
+  <div *ngFor="let survey of surveys">
+    <div><strong style="font-size: 20px">Survey {{survey.id}}</strong></div>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Number</th>
+        <th>Email</th>
+        <th>Date of Survey</th>
+      </tr>
+      <tr>
+        <td>{{survey.firstname}} {{survey.lastname}}</td>
+        <td>{{survey.street}} {{survey.city}} {{survey.state}} {{survey.zip}}</td>
+        <td>{{survey.phone}}</td>
+        <td>{{survey.email}}</td>
+        <td>{{survey.date}}</td>
+      </tr>
+    </table>
+    <div><strong style="font-size: 15px"> Things that {{survey.firstname}} {{survey.lastname}} likes True/False </strong></div>
+    <table>
+      <tr>
+        <th>Students</th>
+        <th>Atmosphere</th>
+        <th>Location</th>
+        <th>Dorm</th>
+        <th>Campus</th>
+        <th>Sports</th>
+      </tr>
+      <tr>
+        <td>{{survey.student}}</td>
+        <td>{{survey.atmosphere}}</td>
+        <td>{{survey.location}}</td>
+        <td>{{survey.dorm}}</td>
+        <td>{{survey.campus}}</td>
+        <td>{{survey.sport}}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>Interest Reason</th>
+        <th>Would recommend</th>
+        <th>Additional comments</th>
+      </tr>
+      <tr>
+        <td>{{survey.interestedreason}}</td>
+        <td>{{survey.recommend}}</td>
+        <td>{{survey.comment}}</td>
+      </tr>
+    </table>
+    <br><br><br>
+  </div>
+</section>
+
+<!--Footer-->
+<footer class="footer">
+  <p style="font-size: 25px; color: #006633;">Additional Links</p>
+  <ul class="footer-links w3-container">
+    <li class="w3-ul"><a [routerLink]="['/survey']">CS SURVEY</a></li>
+    <li class="w3-ul"><a [routerLink]="['/allSurveys']">ALL SURVEYS</a></li>
+    <li class="w3-ul"><a href="https://catalog.gmu.edu/colleges-schools/engineering/computer-science/">MS CS</a>
+    </li>
+  </ul>
+</footer>
+
+<!--Mason Logo(link) fixed on bottom right of page-->
+<!--logo from https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/George_Mason_University_logo.svg/1024px-George_Mason_University_logo.svg.png-->
+<a href="https://gmu.edu/">
+  <img id="main-logo" src="../../assets/mason_logo.png" alt="GMU website" style="width: 280px; height: 160px;">
+</a>
+</body>
+</html>
+<router-outlet></router-outlet>

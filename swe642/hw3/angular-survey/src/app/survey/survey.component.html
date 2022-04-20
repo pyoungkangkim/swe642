@@ -1,0 +1,165 @@
+<!--name: Pyoung Kang Kim-->
+<!--description: the survey page for part 1 of the homework-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>pkim23 swe642 HW1</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<!--Header Section-->
+<header class="header">
+  <div id="header-rectangle" style="width: 800px; padding: 20px 12px 12px 12px;" class="w3-container">
+    <h1 class="welcome-bottom">GMU Student Survey</h1>
+  </div>
+</header>
+
+<body>
+<strong>Author: Pyoung Kang Kim</strong>
+<!--Survey Section-->
+<section class="survey">
+  <div class="w3-group">
+    <label class="required-field">required fields are marked </label>
+    <br><br>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="w3-container w3-card-8" autocomplete="on">
+<!--  <form class="w3-container w3-card-8" autocomplete="on">-->
+    <div class="w3-half">
+      <input id="form-firstname" class="w3-input" type="text" style="width:90%" required placeholder="John" formControlName="firstname">
+      <label for="form-firstname" class="w3-label required-field">First Name</label>
+    </div>
+    <div class="w3-half">
+      <input id="form-lastname" class="w3-input" type="text" style="width:100%" required placeholder="Doe" formControlName="lastname">
+      <label for="form-lastname" class="w3-label required-field">Last Name</label>
+    </div>
+    <div class="w3-half">
+      <input id="form-street" class="w3-input" type="text" style="width:90%" required placeholder="12345 John Doe Street" formControlName="street">
+      <label for="form-street" class="w3-label required-field">Street Address</label>
+    </div>
+    <div class="w3-half">
+      <input id="form-city" class="w3-input" type="text" style="width:100%" required placeholder="John Doe City" formControlName="city">
+      <label for="form-city" class="w3-label required-field">City</label>
+    </div>
+    <div class="w3-third">
+      <input id="form-state" class="w3-input" type="text" style="width:87%" required placeholder="VA" formControlName="state">
+      <label for="form-state" class="w3-label required-field">State</label>
+    </div>
+    <div class="w3-third">
+      <input id="form-zip" class="w3-input" type="text" style="width:90%" required placeholder="12345" formControlName="zip">
+      <label for="form-zip" class="w3-label required-field">Zip</label>
+    </div>
+    <div class="w3-third">
+      <input id="form-telephone" class="w3-input" type="text" style="width:100%" required placeholder="1-(123)-123-1234" formControlName="phone">
+      <label for="form-telephone" class="w3-label required-field">Telephone Number</label>
+    </div>
+    <div class="w3-half">
+      <input id="form-email" class="w3-input" type="text" style="width:90%" required placeholder="myemail@email.com" formControlName="email">
+      <label for="form-email" class="w3-label required-field">E-mail</label>
+    </div>
+    <div class="w3-half">
+      <input id="form-date" class="w3-input" type="text" style="width:100%" required placeholder="01/01/2000" formControlName="date">
+      <label for="form-date" class="w3-label required-field">Date of Survey</label>
+    </div>
+    <br>
+    <strong>Provide a checklist of what you liked most about the campus</strong>
+    <br>
+    <p>(Check all that apply)</p>
+    <div class="w3-row">
+      <div class="w3-half">
+        <label class="w3-checkbox">
+          <input type="checkbox" formControlName="student"> Students
+          <div class="w3-checkmark"></div>
+        </label>
+        <label class="w3-checkbox">
+          <input type="checkbox" formControlName="location"> Location
+          <div class="w3-checkmark"></div>
+        </label>
+        <label class="w3-checkbox">
+          <input type="checkbox" formControlName="campus"> Campus
+          <div class="w3-checkmark"></div>
+        </label>
+      </div>
+      <div class="w3-half">
+        <label class="w3-checkbox">
+          <input type="checkbox" formControlName="atmosphere"> Atmosphere
+          <div class="w3-checkmark"></div>
+        </label>
+        <label class="w3-checkbox">
+          <input type="checkbox" formControlName="dorm"> Dorm Rooms
+          <div class="w3-checkmark"></div>
+        </label>
+        <label class="w3-checkbox">
+          <input type="checkbox" formControlName="sport"> Sports
+          <div class="w3-checkmark"></div>
+        </label>
+        <br>
+        <br>
+      </div>
+    </div>
+    <strong>Please include the biggest reason you became interested in this school</strong>
+    <br><br>
+    <div class="w3-row">
+      <div class="w3-half">
+        <label class="w3-checkbox">
+          <input type="radio" name="interestedreason" value="Friends" formControlName="interestedreason"> Friends
+          <div class="w3-checkmark"></div>
+        </label>
+        <label class="w3-checkbox">
+          <input type="radio" name="interestedreason" value="Television" formControlName="interestedreason"> Television
+          <div class="w3-checkmark"></div>
+        </label>
+      </div>
+      <div class="w3-half">
+        <label class="w3-checkbox">
+          <input type="radio" name="interestedreason" value="Internet" formControlName="interestedreason"> Internet
+          <div class="w3-checkmark"></div>
+        </label>
+        <label class="w3-checkbox">
+          <input type="radio" name="interestedreason" value="Other" formControlName="interestedreason"> Other
+          <div class="w3-checkmark"></div>
+        </label>
+        <br>
+      </div>
+    </div>
+    <br>
+    <label >Please select how likely you will recommend this school to prospective students</label>
+    <select name="recommend-school" formControlName="recommend">
+      <option value="Very Unlikely">Very Likely</option>
+      <option value="Likely">Likely</option>
+      <option value="Unlikely">Unlikely</option>
+    </select>
+    <br><br>
+    <div class="w3-group">
+      <textarea class="w3-input" style="width:100%" formControlName="comment"></textarea>
+      <label class="w3-label">Additional comments</label>
+    </div>
+    <br><br>
+    <div class="w3-container">
+      <div class="w3-half">
+        <button class="w3-button w3-block w3-blue w3-col" style="color: #006633; width: 90%;">Submit</button>
+      </div>
+      <div class="w3-half">
+        <button class="w3-button w3-block w3-blue w3-col" style="color: #006633; width: 90%;" type="reset">Cancel</button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!--Footer-->
+<footer class="footer">
+  <p style="font-size: 25px; color: #006633;">Additional Links</p>
+  <ul class="footer-links w3-container">
+    <li class="w3-ul"><a [routerLink]="['/survey']">CS SURVEY</a></li>
+    <li class="w3-ul"><a [routerLink]="['/allSurveys']">ALL SURVEYS</a></li>
+    <li class="w3-ul"><a href="https://catalog.gmu.edu/colleges-schools/engineering/computer-science/">MS CS</a>
+    </li>
+  </ul>
+</footer>
+
+<!--Mason Logo(link) fixed on bottom right of page-->
+<!--logo from https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/George_Mason_University_logo.svg/1024px-George_Mason_University_logo.svg.png-->
+<a href="https://gmu.edu/">
+  <img id="main-logo" src="../../assets/mason_logo.png" alt="GMU website" style="width: 280px; height: 160px;">
+</a>
+</body>
+</html>
+<router-outlet></router-outlet>
