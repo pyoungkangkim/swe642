@@ -1,3 +1,4 @@
+// the survey component
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import { HttpClient } from '@angular/common/http';

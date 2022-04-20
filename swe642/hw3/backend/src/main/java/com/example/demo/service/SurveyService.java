@@ -1,3 +1,4 @@
+//the service class which handles the request by saving things to the database or retrieving it using surveyRepo
 package com.example.demo.service;
 
 import com.example.demo.repo.SurveyRepo;

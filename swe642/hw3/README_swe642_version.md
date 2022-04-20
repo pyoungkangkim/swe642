@@ -38,16 +38,12 @@
    - run ```npm i```
    - run ```ng serve --open```
 
-## Video Link below
+## Video Link below for this SWE642 version
 
-- https://www.youtube.com/watch?v=h0CPV2uaTsU
+- https://youtu.be/SZk6aCnWJvE
 
 
-## AWS homepage link below
-
-- http://pkim23-swe645-public.s3-website-us-east-1.amazonaws.com/
-
-## For the full fleged deployment with EKS and docker on AWS version 
+## For the full fleged deployment with EKS and docker on AWS version  for SWE645
 
 - https://github.com/pyoungkangkim/swe/blob/main/README_swe645_hw3.md
 - https://www.youtube.com/watch?v=dkLlDG8vmhA

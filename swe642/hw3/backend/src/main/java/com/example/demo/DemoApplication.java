@@ -1,3 +1,4 @@
+//The main entry class to this app, also can make a configuration bean in here to allow all origins for CORS
 package com.example.demo;
 
 import org.springframework.boot.SpringApplication;

@@ -1,3 +1,4 @@
+//The Entity for JPA, which maps to the Table 'survey' and acts as the ORM
 package com.example.demo.repo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

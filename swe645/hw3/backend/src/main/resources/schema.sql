@@ -1,3 +1,4 @@
+-- schema.sql that is run on init of spring boot app automatically
 CREATE TABLE if not exists survey
 (
     id               MEDIUMINT NOT NULL AUTO_INCREMENT,

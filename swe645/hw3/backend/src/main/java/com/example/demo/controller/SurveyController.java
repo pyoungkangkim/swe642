@@ -1,3 +1,4 @@
+//the controll class that has the Rest api endpoints for get and post
 package com.example.demo.controller;
 
 import com.example.demo.repo.model.Survey;

@@ -1,3 +1,4 @@
+//the repo class, which under the hood uses JPA(uses JDBC under the hood also) and hibernate to give you a CRUD functionality for DB
 package com.example.demo.repo;
 
 import com.example.demo.repo.model.Survey;
