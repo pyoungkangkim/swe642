@@ -69,7 +69,25 @@
    - select the security group named 'default' in SecurityGroups page
    - edit inbound rules 
       - assign a rule that allows all traffic from source 0.0.0.0/0
-   
+
+## set up the backend Spring boot project
+
+1. Create a spring boot project using https://start.spring.io/
+   - include Spring Web(for restful services), JPA(for java persistence api and hibernate) and Lombok(basic object methods)
+   - Or alternatively, just copy the pom.xml file in the backend project in this repository, this will have all the necessary dependencies
+
+2. Write the backend code
+   - go over in the video
+    
+## set up the angular project
+
+1. Install nodejs from https://nodejs.org/en/download/
+2. run ``` npm i @angular/cli ```
+3. run ```ng new angular-survey``` this generates a new angular starter project
+4. to add components run ```ng generate <some-component>```
+5. some other dependencies you need is specified in the components, for example you'll need to run
+   - ```npm install @angular/http```
+6. others will be covered in video as it is too much to go over all the source code
 
 ## Build docker image and upload to ECR
 
@@ -152,8 +170,7 @@
 
 ## Video Link below
 
-- https://www.youtube.com/watch?v=h0CPV2uaTsU
-
+- https://www.youtube.com/watch?v=dkLlDG8vmhA
 
 ## AWS homepage link below
 
